@@ -1,0 +1,25 @@
+
+
+.techList {
+    font-size: 0.8em;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    margin: 0.5em;
+
+}
+
+.iconContainer {
+    display: flex;
+    display: -webkit-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: row;
+}

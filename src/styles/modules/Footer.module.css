@@ -1,0 +1,7 @@
+footer {
+    width: 90%;
+}
+
+footer > p {
+    font-size: 0.5em;
+}

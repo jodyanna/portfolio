@@ -1,0 +1,15 @@
+header {
+    position: sticky;
+    top: 0;
+    width: 90%;
+    margin-bottom: 1em;
+    background-color: #121212;
+}
+
+
+h1 {
+    font-family: monospace;
+    text-align: left;
+    width: 80%;
+    margin-bottom: 0.5em;
+}
