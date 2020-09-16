@@ -27,3 +27,7 @@ export const roundDecimal = (num, exp) => {
 
   return Math.round((num + Number.EPSILON) * precision) / precision;
 }
+
+export const lowerFirstChar = (string) => {
+  return string.charAt(0).toLowerCase() + string.slice(1);
+}
