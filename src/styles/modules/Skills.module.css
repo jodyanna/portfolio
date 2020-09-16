@@ -1,0 +1,40 @@
+
+.container {
+    width: 100%;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barContainer {
+    width: 90%;
+    height: 25px;
+    margin: 0;
+    padding: 1em 1em 1em 0;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+}
+
+.barPart {
+    height: 25px;
+    width: 100%;
+    font-style: italic;
+    font-size: 0.8em;
+    line-height: 2em;
+}
+.partContainer {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 0.7em;
+    font-style: italic;
+
+}
+.highlight {
+    color: hotpink;
+}

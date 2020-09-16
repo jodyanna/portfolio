@@ -10,3 +10,20 @@ export const setSectionHeight = () => {
     document.documentElement.clientHeight
   ).toString() + "px";
 }
+
+export const ajaxRequest = (url) => {
+  return new Promise((resolve) => {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState === 4 && this.status === 200) resolve(JSON.parse(this.responseText))
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+  })
+}
+
+export const roundDecimal = (num, exp) => {
+  const precision = Math.pow(10, exp);
+
+  return Math.round((num + Number.EPSILON) * precision) / precision;
+}
