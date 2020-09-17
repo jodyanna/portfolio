@@ -1,5 +1,6 @@
 import React from "react";
-import {ajaxRequest, roundDecimal} from "../util";
+import GitRepoPercentBar from "./GitRepoPercentBar";
+import {ajaxRequest} from "../util";
 import styles from "../styles/modules/Skills.module.css";
 
 
@@ -9,100 +10,31 @@ class GitAccountSummary extends React.Component {
     this.state = {
       isLoading: true,
     };
-    this.gitUserName = "jodyanna";
-    this.gitRepoNames = [
-      "spiral_designs",
-      "listen-bot",
-      "resume",
-      "css_templates",
-      "algorithms",
-      "leetcode",
-      "make_sample",
-      "gfl_wiki_scraper"
-    ];
   }
 
   componentDidMount() {
-    let promises = this.gitRepoNames.map(repoName => this.githubAPIRequest(repoName));
-    Promise.all(promises).then(data => this.calcGitRepoLangUsage(data))
-      .then(data => this.determineLangUsagePercents(data))
-      .then(data => this.setState({isLoading: false, gitData: this.createStateObject(data)}))
+    const promise = this.githubAPIRequest(this.props.username);
+    promise.then(data => data.map(obj => obj.name))
+      .then(data => this.setState({isLoading: false, repos: data}));
   }
 
-  async githubAPIRequest(repoName) {
-    return await ajaxRequest(`https://api.github.com/repos/${this.gitUserName}/${repoName}/languages`)
-  }
-
-  calcGitRepoLangUsage(data) {
-    let hashmap = {}
-    for (let i = 0; i < data.length; i++) {
-      for (const prop in data[i]) {
-        if (hashmap.hasOwnProperty(prop)) hashmap[prop] += data[i][prop];
-        else hashmap[prop] = data[i][prop];
-      }
-    }
-    return hashmap
-  }
-
-  determineLangUsagePercents(data) {
-    let hashmap = {};
-    for (const prop in data) {
-      const ratio = data[prop] / this.calcGitLangScore(data);
-      hashmap[prop] = (Math.floor(roundDecimal(ratio, 2) * 100)).toString() + "%";
-    }
-    return hashmap
-  }
-
-  calcGitLangScore(data) {
-    return Object.keys(data).map((lang) => data[lang]).reduce((a, b) => a + b, 0)
-  }
-
-  createStateObject(data) {
-    let hashmaps = {};
-    for (const prop in data) {
-      let hashmap = {};
-      hashmap["width"] = data[prop];
-      hashmap["backgroundColor"] = this.determineStateStyleColor(prop.toLowerCase());
-      hashmaps[prop.toLowerCase()] = hashmap;
-    }
-    return hashmaps
-  }
-
-  determineStateStyleColor(lang) {
-    if (lang.localeCompare("javascript") === 0) return "#e4ba42";
-    if (lang.localeCompare("html") === 0) return "#e34c26";
-    if (lang.localeCompare("css") === 0) return "#563d7c";
-    if (lang.localeCompare("python") === 0) return "#3572a5";
-    if (lang.localeCompare("php") === 0) return "#4f5d95";
+  async githubAPIRequest(username) {
+    return await ajaxRequest(`https://api.github.com/users/${username}/repos`)
   }
 
   render() {
-    const createBar = () => {
+    const renderOverview = () => {
       if (!this.state.isLoading) {
         return (
-          <div className={styles.barContainer}>
-            <BarPart width={this.state.gitData.javascript.width}
-                     backgroundColor={this.state.gitData.javascript.backgroundColor}
-                     label={"JavaScript"}
-            />
-            <BarPart width={this.state.gitData.html.width}
-                     backgroundColor={this.state.gitData.html.backgroundColor}
-                     label={"HTML"}
-            />
-            <BarPart width={this.state.gitData.css.width}
-                     backgroundColor={this.state.gitData.css.backgroundColor}
-                     label={"CSS"}
-            />
-            <BarPart width={this.state.gitData.python.width}
-                     backgroundColor={this.state.gitData.python.backgroundColor}
-                     label={"Python"}
-            />
-            <BarPart width={this.state.gitData.php.width}
-                     backgroundColor={this.state.gitData.php.backgroundColor}
-                     label={"PHP"}
-            />
-          </div>
+          <span>Programming language usage across <a href="https://github.com/jodyanna?tab=repositories">
+          {this.state.repos.length}</a> repositories</span>
         )
+      }
+    }
+
+    const renderBar = () => {
+      if (!this.state.isLoading) {
+        return <GitRepoPercentBar username={this.props.username} repos={this.state.repos} />
       }
     }
 
@@ -110,25 +42,8 @@ class GitAccountSummary extends React.Component {
       <div className={styles.container}>
         <h3>GitHub Summary</h3>
         <hr/>
-        <span>Programming language usage across <a href="https://github.com/jodyanna?tab=repositories">
-          {this.gitRepoNames.length}</a> repositories</span>
-        {createBar()}
-      </div>
-    )
-  }
-}
-
-class BarPart extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div style={{width: this.props.width}} className={styles.partContainer}>
-        <div style={{backgroundColor: this.props.backgroundColor}} className={styles.barPart}>
-          {this.props.width}
-        </div>
-        <span className={styles.label}>{this.props.label}</span>
+        {renderOverview()}
+        {renderBar()}
       </div>
     )
   }

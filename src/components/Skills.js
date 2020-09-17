@@ -37,7 +37,7 @@ class Skills extends React.Component {
       <section>
         <h2>[...Skills]</h2>
         <article>
-          <GitAccountSummary />
+          <GitAccountSummary username={"jodyanna"} />
           <hr/>
           <table>
             <thead></thead>
