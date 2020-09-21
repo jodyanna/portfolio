@@ -102,7 +102,6 @@ class GitRepoPercentBar extends React.Component {
   }
 }
 
-
 function BarPart(props) {
   return (
     <div style={{width: props.width}} className={styles.partContainer}>
