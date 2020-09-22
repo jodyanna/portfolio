@@ -72,7 +72,7 @@ class GitRepoPercentBar extends React.Component {
           <div className={styles.barContainer}>
             <BarPart width={this.state.gitData.javascript.width}
                      backgroundColor={this.state.gitData.javascript.backgroundColor}
-                     label={"JavaScript"}
+                     label={"JS"}
             />
             <BarPart width={this.state.gitData.html.width}
                      backgroundColor={this.state.gitData.html.backgroundColor}
@@ -95,7 +95,7 @@ class GitRepoPercentBar extends React.Component {
       }
     }
     return (
-      <div className={styles.container}>
+      <div className={styles.containerCol}>
         {createBar()}
       </div>
     )

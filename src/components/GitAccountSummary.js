@@ -39,7 +39,7 @@ class GitAccountSummary extends React.Component {
     }
 
     return(
-      <div className={styles.container}>
+      <div className={styles.containerCol}>
         <h3>GitHub Summary</h3>
         <hr/>
         {renderOverview()}
