@@ -1,6 +1,15 @@
 
+.container {
+    display: flex;
+    display: -webkit-flex;
 
-.techList {
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: row;
+}
+
+.caption {
     font-size: 0.8em;
     font-style: italic;
     margin: 0;
@@ -20,5 +29,6 @@
     align-items: center;
     justify-content: center;
 
-    flex-direction: row;
+    flex-direction: column;
+    margin: 0;
 }

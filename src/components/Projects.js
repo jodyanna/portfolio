@@ -12,24 +12,22 @@ import reactIcon from '../img/icons/react.svg';
 class Projects extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  projectOne = {
-    name: "listen-bot",
-    techUsed: ["JavaScript", "CSS", "HTML", "PHP", "MySQL"],
-    description: `A simple web app that allows users to create and read blog posts anonymously. User posts are stored 
+    this.projectOne = {
+      name: "listen-bot",
+      techUsed: ["JavaScript", "CSS", "HTML", "PHP", "MySQL"],
+      description: `A simple web app that allows users to create and read blog posts anonymously. User posts are stored 
                   in a MySQL database with CRUD operations written in PHP. View uses basic HTML and custom CSS styles
                   with dynamic content rendered by JavaScript.`,
-    gitLink: "https://github.com/jodyanna/listen-bot",
-  }
-
-  projectTwo = {
-    name: "Spiral Designs",
-    techUsed: ["JavaScript", "CSS", "HTML"],
-    description: `Web app that displays an arithmetic spiral animation using HTML canvas. Spiral is rendered at 10 fps
+      gitLink: "https://github.com/jodyanna/listen-bot",
+    }
+    this.projectTwo = {
+      name: "Spiral Designs",
+      techUsed: ["JavaScript", "CSS", "HTML"],
+      description: `Web app that displays an arithmetic spiral animation using HTML canvas. Spiral is rendered at 10 fps
                   with all settings being updated in real time. Written with vanilla JavaScript in an object oriented 
                   design paradigm.`,
-    gitLink: "https://github.com/jodyanna/spiral_designs",
+      gitLink: "https://github.com/jodyanna/spiral_designs",
+    }
   }
 
   render() {
@@ -71,10 +69,17 @@ class Project extends React.Component {
       <article>
         <h3>{this.props.project.name}</h3>
         <hr/>
-        <div className={styles.iconContainer}>
-          {this.props.project.techUsed.map(renderIcon)}
+        <div className={styles.container}>
+          {this.props.project.techUsed.map(tech => {
+            return (
+              <figure className={styles.iconContainer}>
+                {renderIcon(tech)}
+                <figcaption className={styles.caption}>{tech}</figcaption>
+              </figure>
+              )
+            })
+          }
         </div>
-        <p className={styles.techList}>{renderTechList(this.props.project.techUsed)}</p>
         <p>{this.props.project.description}</p>
         <a href={this.props.project.gitLink}>{this.props.project.name} - Github</a>
       </article>
