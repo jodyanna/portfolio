@@ -6,7 +6,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
 }
 
 .containerCol {
@@ -29,28 +28,7 @@
     margin: 0.5em 1em;
 }
 
-.barContainer {
-    width: 90%;
-    height: 25px;
-    margin: 0;
-    padding: 1em 1em 1em 0;
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: row;
-}
 
-.barPart {
-    height: 25px;
-    width: 100%;
-    font-style: italic;
-    font-size: 0.8em;
-    line-height: 2em;
-}
-.partContainer {
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: column;
-}
 
 .icon {
     width: 60px;
@@ -58,15 +36,4 @@
     margin: 1em;
 }
 
-.label {
-    font-size: 0.7em;
-    font-style: italic;
-}
 
-.fadein-enter {
-    opacity: 0.01;
-}
-.fadein-enter.fadein-enter-active {
-    opacity: 1;
-    transition: opacity 300ms ease-in;
-}

@@ -1,7 +1,7 @@
 import React from "react";
 import GitRepoPercentBar from "./GitRepoPercentBar";
 import {ajaxRequest} from "../util";
-import styles from "../styles/modules/Skills.module.css";
+import styles from "../styles/modules/GitAccount.module.css";
 
 
 class GitAccountSummary extends React.Component {

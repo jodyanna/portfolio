@@ -1,6 +1,6 @@
 import React from "react";
 import {ajaxRequest, roundDecimal} from "../util";
-import styles from "../styles/modules/Skills.module.css";
+import styles from "../styles/modules/GitAccount.module.css";
 
 
 class GitRepoPercentBar extends React.Component {
