@@ -1,11 +1,13 @@
 
-.skillContainer {
-    width: 100%;
+
+.container {
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .containerCol {
@@ -19,7 +21,7 @@
 }
 
 .containerRow {
-    width: auto;
+    width: 200px;
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
@@ -27,8 +29,6 @@
 
     margin: 0.5em 1em;
 }
-
-
 
 .icon {
     width: 60px;

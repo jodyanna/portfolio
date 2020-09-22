@@ -53,7 +53,7 @@ class Skills extends React.Component {
       <section>
         <h2>[...Skills]</h2>
         <article>
-          <div className={styles.skillContainer}>
+          <div className={styles.container}>
             <Skill skill={this.skills.javaScript} />
             <Skill skill={this.skills.html} />
             <Skill skill={this.skills.css} />
