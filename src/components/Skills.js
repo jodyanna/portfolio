@@ -46,13 +46,14 @@ class Skills extends React.Component {
         skillLevel: "30%",
       }
     }
+    this.skillsSummary = ``;
   }
 
   render() {
     return (
       <section>
         <h2>[...Skills]</h2>
-        <article>
+        <article className={styles.article}>
           <div className={styles.container}>
             <Skill skill={this.skills.javaScript} />
             <Skill skill={this.skills.html} />

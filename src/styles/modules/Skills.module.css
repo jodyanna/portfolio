@@ -1,4 +1,12 @@
 
+.article {
+    width: 80%;
+    margin: 0 0 2em 0;
+    padding: 0.5em;
+    background-color: #292d3e;
+    border: #373d49 5px solid;
+    border-radius: 5px;
+}
 
 .container {
     display: flex;
@@ -21,7 +29,7 @@
 }
 
 .containerRow {
-    width: 200px;
+    width: 180px;
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
