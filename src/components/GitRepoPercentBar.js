@@ -9,6 +9,7 @@ class GitRepoPercentBar extends React.Component {
     this.state = {
       isLoading: true,
     };
+    this.colors = require("./colors.json"); // thank you https://github.com/ozh
   }
 
   componentDidMount() {
@@ -53,18 +54,10 @@ class GitRepoPercentBar extends React.Component {
     for (const prop in data) {
       let styles = {};
       styles["width"] = data[prop];
-      styles["backgroundColor"] = this.determineStateStyleColor(prop.toLowerCase());
+      styles["backgroundColor"] = this.colors[prop]["color"];
       temp[prop.toLowerCase()] = styles;
     }
     return temp
-  }
-
-  determineStateStyleColor(lang) {
-    if (lang.localeCompare("javascript") === 0) return "#e4ba42";
-    if (lang.localeCompare("html") === 0) return "#e34c26";
-    if (lang.localeCompare("css") === 0) return "#563d7c";
-    if (lang.localeCompare("python") === 0) return "#3572a5";
-    if (lang.localeCompare("php") === 0) return "#4f5d95";
   }
 
   render() {
