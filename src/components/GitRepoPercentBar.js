@@ -23,38 +23,40 @@ class GitRepoPercentBar extends React.Component {
   }
 
   calcGitRepoLangUsage(data) {
-    let hashmap = {};
+    // param: array of objects
+    // return: obj
+    let temp = {};
     for (let i = 0; i < data.length; i++) {
       for (const prop in data[i]) {
-        if (hashmap.hasOwnProperty(prop)) hashmap[prop] += data[i][prop];
-        else hashmap[prop] = data[i][prop];
+        if (temp.hasOwnProperty(prop)) temp[prop] += data[i][prop];
+        else temp[prop] = data[i][prop];
       }
     }
-    return hashmap
+    return temp
   }
 
   determineLangUsagePercents(data) {
-    let hashmap = {};
+    let temp = {};
     for (const prop in data) {
       const ratio = data[prop] / this.calcGitLangScore(data);
-      hashmap[prop] = (Math.floor(roundDecimal(ratio, 2) * 100)).toString() + "%";
+      temp[prop] = (Math.floor(roundDecimal(ratio, 2) * 100)).toString() + "%";
     }
-    return hashmap
+    return temp
   }
 
   calcGitLangScore(data) {
-    return Object.keys(data).map((lang) => data[lang]).reduce((a, b) => a + b, 0)
+    return Object.values(data).reduce((a, b) => a + b, 0)
   }
 
   createStateObject(data) {
-    let hashmaps = {};
+    let temp = {};
     for (const prop in data) {
-      let hashmap = {};
-      hashmap["width"] = data[prop];
-      hashmap["backgroundColor"] = this.determineStateStyleColor(prop.toLowerCase());
-      hashmaps[prop.toLowerCase()] = hashmap;
+      let styles = {};
+      styles["width"] = data[prop];
+      styles["backgroundColor"] = this.determineStateStyleColor(prop.toLowerCase());
+      temp[prop.toLowerCase()] = styles;
     }
-    return hashmaps
+    return temp
   }
 
   determineStateStyleColor(lang) {
