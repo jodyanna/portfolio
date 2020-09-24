@@ -9,7 +9,7 @@ class GitRepoPercentBar extends React.Component {
     this.state = {
       isLoading: true,
     };
-    this.colors = require("./colors.json"); // thank you https://github.com/ozh
+    this.colors = require("./colors.json"); // thank you https://github.com/ozh/github-colors
   }
 
   componentDidMount() {
@@ -38,9 +38,11 @@ class GitRepoPercentBar extends React.Component {
 
   determineLangUsagePercents(data) {
     let temp = {};
+    const langScoreTotal = this.calcGitLangScore(data);
     for (const prop in data) {
-      const ratio = data[prop] / this.calcGitLangScore(data);
-      temp[prop] = (Math.floor(roundDecimal(ratio, 2) * 100)).toString() + "%";
+      const ratio = data[prop] / langScoreTotal;
+      const width = (Math.floor(roundDecimal(ratio, 2) * 100));
+      if (width > 0) temp[prop] = width;
     }
     return temp
   }
@@ -50,12 +52,14 @@ class GitRepoPercentBar extends React.Component {
   }
 
   createStateObject(data) {
+    const sorted = Object.entries(data).sort((a, b) => b[1] - a[1]);
     let temp = {};
-    for (const prop in data) {
+    for (let i = 0; i < sorted.length; i++) {
       let styles = {};
-      styles["width"] = data[prop];
-      styles["backgroundColor"] = this.colors[prop]["color"];
-      temp[prop.toLowerCase()] = styles;
+      styles["displayName"] = sorted[i][0];
+      styles["width"] = sorted[i][1].toString() + "%";
+      styles["backgroundColor"] = this.colors[sorted[i][0]]["color"];
+      temp[sorted[i]] = styles;
     }
     return temp
   }
@@ -65,26 +69,9 @@ class GitRepoPercentBar extends React.Component {
       if (!this.state.isLoading) {
         return (
           <div className={styles.barContainer}>
-            <BarPart width={this.state.gitData.javascript.width}
-                     backgroundColor={this.state.gitData.javascript.backgroundColor}
-                     label={"JS"}
-            />
-            <BarPart width={this.state.gitData.html.width}
-                     backgroundColor={this.state.gitData.html.backgroundColor}
-                     label={"HTML"}
-            />
-            <BarPart width={this.state.gitData.css.width}
-                     backgroundColor={this.state.gitData.css.backgroundColor}
-                     label={"CSS"}
-            />
-            <BarPart width={this.state.gitData.python.width}
-                     backgroundColor={this.state.gitData.python.backgroundColor}
-                     label={"Python"}
-            />
-            <BarPart width={this.state.gitData.php.width}
-                     backgroundColor={this.state.gitData.php.backgroundColor}
-                     label={"PHP"}
-            />
+            {Object.values(this.state.gitData).map(obj => <BarPart label={obj.displayName}
+                                                                   width={obj.width}
+                                                                   backgroundColor={obj.backgroundColor}/>)}
           </div>
         )
       }
