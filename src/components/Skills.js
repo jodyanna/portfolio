@@ -52,17 +52,16 @@ class Skills extends React.Component {
   render() {
     return (
       <section>
-        <h2>[...Skills]</h2>
+        <h2 id={"skills"}>[...Skills]</h2>
         <article className={styles.article}>
           <div className={styles.container}>
             <Skill skill={this.skills.javaScript} />
             <Skill skill={this.skills.html} />
             <Skill skill={this.skills.css} />
             <Skill skill={this.skills.python} />
-            <Skill skill={this.skills.php} />
           </div>
         </article>
-        <article>
+        <article id={"github-overview"}>
           <GitAccountSummary username={"jodyanna"} />
         </article>
       </section>

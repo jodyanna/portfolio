@@ -26,7 +26,7 @@ class GitAccountSummary extends React.Component {
     const renderOverview = () => {
       if (!this.state.isLoading) {
         return (
-          <span>Programming language usage across <a href={`https://github.com/${this.props.username}?tab=repositories`}>
+          <span>Programming languages across <a href={`https://github.com/${this.props.username}?tab=repositories`}>
           {this.state.repos.length}</a> repositories</span>
         )
       }

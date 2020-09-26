@@ -1,0 +1,99 @@
+
+.container {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    float: right;
+
+    margin-left: auto;
+}
+
+.menuVisible {
+    position: fixed;
+    top: 0;
+    right: 1em;
+
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 90%;
+    height: 100%;
+
+    margin: 0;
+    padding: 1em;
+
+    background-color: #121212;
+    opacity: 80%;
+
+}
+
+.menuNotVisible {
+    display: none;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+
+}
+
+.button {
+    margin: 0.3em;
+    background-color: transparent;
+    border: none;
+}
+
+.navItem {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+
+    justify-content: flex-start;
+
+    width: 100%;
+
+    font-size: 4em;
+    list-style: none;
+}
+
+.navItemSub {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+
+    justify-content: flex-end;
+
+    width: 100%;
+
+    font-size: 2em;
+}
+
+.navButton {
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    background-color: transparent;
+
+    color: springgreen;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.navButton:hover {
+    color: springgreen;
+    cursor: pointer;
+}
+
+
+.innerButton {
+    color: hotpink;
+}
+.innerButton:hover {
+    color: springgreen;
+}

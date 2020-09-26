@@ -76,3 +76,7 @@ a:visited {
 a:hover {
   color: mediumspringgreen;
 }
+
+/* Offset sticky header
+https://stackoverflow.com/questions/4086107/fixed-page-header-overlaps-in-page-anchors/28824157#28824157
+*/

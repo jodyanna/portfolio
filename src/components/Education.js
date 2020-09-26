@@ -13,7 +13,7 @@ class Education extends React.Component {
   render() {
     return (
       <section>
-        <h2>Education++;</h2>
+        <h2 id={"education"}>Education++;</h2>
         <article>
           <h3>Bachelor of Arts</h3>
           <hr/>

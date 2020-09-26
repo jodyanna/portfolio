@@ -33,7 +33,7 @@ class Projects extends React.Component {
   render() {
     return (
       <section>
-        <h2>Projects = {"{...}"}</h2>
+        <h2 id={"projects"}>Projects = {"{...}"}</h2>
         <Project project={this.projectOne}/>
         <Project project={this.projectTwo}/>
       </section>
@@ -67,7 +67,7 @@ class Project extends React.Component {
 
     return (
       <article>
-        <h3>{this.props.project.name}</h3>
+        <h3 id={this.props.project.name.toLowerCase()}>{this.props.project.name}</h3>
         <hr/>
         <div className={styles.container}>
           {this.props.project.techUsed.map(tech => {

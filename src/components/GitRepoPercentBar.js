@@ -9,7 +9,7 @@ class GitRepoPercentBar extends React.Component {
     this.state = {
       isLoading: true,
     };
-    this.colors = require("./colors.json"); // thank you https://github.com/ozh/github-colors
+    this.colors = require("../colors.json"); // thank you https://github.com/ozh/github-colors
   }
 
   componentDidMount() {

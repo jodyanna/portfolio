@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from "../styles/modules/Summary.module.css";
 
 
 class Summary extends React.Component {
@@ -27,7 +27,7 @@ class Summary extends React.Component {
 
   render() {
     return (
-      <section>
+      <section id={"top"}>
         <article>
           <p>Self-taught hobbyist programmer seeking employment as a Jr. Web Developer</p>
           <p>{this.summaryText[this.state.textIndex]}</p>

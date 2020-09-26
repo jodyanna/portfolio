@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigation from "./Navigation";
 import styles from '../styles/modules/Header.module.css';
 
 class Header extends React.Component {
@@ -10,8 +11,11 @@ class Header extends React.Component {
 
   render() {
     return (
-      <header>
-        <h1>Joseph D'Anna</h1>
+      <header className={styles.header}>
+        <div className={styles.container}>
+          <h1 className={styles.h1}>Joseph D'Anna</h1>
+          <Navigation />
+        </div>
         <hr/>
       </header>
     );
