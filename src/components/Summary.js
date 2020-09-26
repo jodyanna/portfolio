@@ -27,7 +27,7 @@ class Summary extends React.Component {
 
   render() {
     return (
-      <section id={"top"}>
+      <section>
         <article>
           <p>Self-taught hobbyist programmer seeking employment as a Jr. Web Developer</p>
           <p>{this.summaryText[this.state.textIndex]}</p>

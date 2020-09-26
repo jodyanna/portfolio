@@ -1,3 +1,4 @@
+import React from "react";
 
 
 export const setSectionHeight = () => {
@@ -30,4 +31,11 @@ export const roundDecimal = (num, exp) => {
 
 export const lowerFirstChar = (string) => {
   return string.charAt(0).toLowerCase() + string.slice(1);
+}
+
+
+/****************************** React Components ******************************/
+
+export default function Anchor(props) {
+  return <span id={props.name} className={"anchor"} />
 }

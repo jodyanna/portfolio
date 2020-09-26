@@ -54,20 +54,20 @@ class NavMenu extends React.Component {
         <li className={styles.navItemSub}>
           <NavButton label={"X"} onClick={this.props.onClick} />
         </li>
-        <li className={styles.navItem}><a href={"#top"}>Top</a></li>
-        <li className={styles.navItemSub}><a href={"#"}>Resume</a></li>
+        <li className={styles.navItem}><a href={"#top"} onClick={this.props.onClick}>Top</a></li>
+        <li className={styles.navItemSub}><a href={"#"} onClick={this.props.onClick}>Resume</a></li>
         <hr/>
-        <li className={styles.navItem}><a href={"#skills"}>Skills</a></li>
-        <li className={styles.navItemSub}><a href={"#github-overview"}>GitHub Overview</a></li>
+        <li className={styles.navItem}><a href={"#skills"} onClick={this.props.onClick}>Skills</a></li>
+        <li className={styles.navItemSub}><a href={"#github-overview"} onClick={this.props.onClick}>GitHub Overview</a></li>
         <hr/>
-        <li className={styles.navItem}><a href={"#projects"}>Projects</a></li>
-        <li className={styles.navItemSub}><a href={"#listen-bot"}>listen-bot</a></li>
-        <li className={styles.navItemSub}><a href={"#spiral designs"}>Spiral Designs</a></li>
+        <li className={styles.navItem}><a href={"#projects"} onClick={this.props.onClick}>Projects</a></li>
+        <li className={styles.navItemSub}><a href={"#listen-bot"} onClick={this.props.onClick}>listen-bot</a></li>
+        <li className={styles.navItemSub}><a href={"#spiral-designs"} onClick={this.props.onClick}>Spiral Designs</a></li>
         <hr/>
-        <li className={styles.navItem}><a href={"#education"}>Education</a></li>
-        <li className={styles.navItemSub}><a href={"#languages"}>Languages</a></li>
+        <li className={styles.navItem}><a href={"#education"} onClick={this.props.onClick}>Education</a></li>
+        <li className={styles.navItemSub}><a href={"#languages"} onClick={this.props.onClick}>Languages</a></li>
         <hr/>
-        <li className={styles.navItem}><a href={"#contact"}>Contact</a></li>
+        <li className={styles.navItem}><a href={"#contact"} onClick={this.props.onClick}>Contact</a></li>
       </ul>
     )
   }

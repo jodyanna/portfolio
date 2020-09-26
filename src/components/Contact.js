@@ -18,7 +18,7 @@ class Contact extends React.Component {
   render() {
     return (
       <section>
-        <h2 id={"contact"}>Contact(me)</h2>
+        <h2>Contact(me)</h2>
         <article>
           <div className={styles.container}>
             <div className={styles.contactItem}>

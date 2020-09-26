@@ -1,7 +1,7 @@
 import React from 'react';
-import './index.css';
 
 import Header from './components/Header.js';
+import Anchor from "./util";
 import Summary from './components/Summary.js';
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
@@ -15,15 +15,22 @@ function App() {
     <body>
       <Header />
       <div id={"content"}>
+        <Anchor name={"top"} />
         <Summary />
+        <Anchor name={"skills"} />
         <Skills />
+        <Anchor name={"projects"} />
         <Projects />
+        <Anchor name={"education"} />
         <Education />
+        <Anchor name={"contact"} />
         <Contact />
       </div>
       <Footer />
     </body>
   );
 }
+
+
 
 export default App;

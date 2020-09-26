@@ -1,4 +1,5 @@
 import React from 'react';
+import Anchor from "../util";
 import styles from '../styles/modules/Projects.module.css';
 
 import cssIcon from '../img/icons/css.svg';
@@ -14,6 +15,7 @@ class Projects extends React.Component {
     super(props);
     this.projectOne = {
       name: "listen-bot",
+      id: "listen-bot",
       techUsed: ["JavaScript", "CSS", "HTML", "PHP", "MySQL"],
       description: `A simple web app that allows users to create and read blog posts anonymously. User posts are stored 
                   in a MySQL database with CRUD operations written in PHP. View uses basic HTML and custom CSS styles
@@ -22,6 +24,7 @@ class Projects extends React.Component {
     }
     this.projectTwo = {
       name: "Spiral Designs",
+      id: "spiral-designs",
       techUsed: ["JavaScript", "CSS", "HTML"],
       description: `Web app that displays an arithmetic spiral animation using HTML canvas. Spiral is rendered at 10 fps
                   with all settings being updated in real time. Written with vanilla JavaScript in an object oriented 
@@ -34,7 +37,9 @@ class Projects extends React.Component {
     return (
       <section>
         <h2 id={"projects"}>Projects = {"{...}"}</h2>
+        <Anchor name={this.projectOne.id} />
         <Project project={this.projectOne}/>
+        <Anchor name={this.projectTwo.id} />
         <Project project={this.projectTwo}/>
       </section>
     );
@@ -67,7 +72,7 @@ class Project extends React.Component {
 
     return (
       <article>
-        <h3 id={this.props.project.name.toLowerCase()}>{this.props.project.name}</h3>
+        <h3>{this.props.project.name}</h3>
         <hr/>
         <div className={styles.container}>
           {this.props.project.techUsed.map(tech => {

@@ -10,6 +10,7 @@ import reactIcon from '../img/icons/react.svg';
 import mysqlIcon from '../img/icons/mysql.svg';
 
 import styles from "../styles/modules/Skills.module.css";
+import Anchor from "../util";
 
 class Skills extends React.Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class Skills extends React.Component {
   render() {
     return (
       <section>
-        <h2 id={"skills"}>[...Skills]</h2>
+        <h2>[...Skills]</h2>
         <article className={styles.article}>
           <div className={styles.container}>
             <Skill skill={this.skills.javaScript} />
@@ -61,7 +62,8 @@ class Skills extends React.Component {
             <Skill skill={this.skills.python} />
           </div>
         </article>
-        <article id={"github-overview"}>
+        <Anchor name={"github-overview"} />
+        <article>
           <GitAccountSummary username={"jodyanna"} />
         </article>
       </section>
