@@ -33,6 +33,7 @@ class Intro extends React.Component {
               <br/>
               My name is,
             </span>
+            <h1 className={styles.h1}>Joseph D'Anna</h1>
           </div>
         </div>
       </section>
