@@ -20,6 +20,7 @@ class Projects extends React.Component {
       description: `A simple web app that allows users to create and read blog posts anonymously. User posts are stored 
                   in a MySQL database with CRUD operations written in PHP. View uses basic HTML and custom CSS styles
                   with dynamic content rendered by JavaScript.`,
+      link: "",
       gitLink: "https://github.com/jodyanna/listen-bot",
     }
     this.projectTwo = {
@@ -29,6 +30,7 @@ class Projects extends React.Component {
       description: `Web app that displays an arithmetic spiral animation using HTML canvas. Spiral is rendered at 10 fps
                   with all settings being updated in real time. Written with vanilla JavaScript in an object oriented 
                   design paradigm.`,
+      link: "https://spiral-designs.netlify.app/",
       gitLink: "https://github.com/jodyanna/spiral_designs",
     }
   }
@@ -49,25 +51,26 @@ class Projects extends React.Component {
 class Project extends React.Component {
   constructor(props) {
     super(props);
+    this.icons = {
+      "JavaScript": jsIcon,
+      "HTML": htmlIcon,
+      "CSS": cssIcon,
+      "Python": pythonIcon,
+      "PHP": phpIcon,
+      "MySQL": mysqlIcon,
+      "React": reactIcon
+    }
   }
 
   render() {
-    const renderTechList = techList => {
-      let string = "";
-      for (let i = 0; i < techList.length; i++) {
-        string += techList[i] + " ";
-      }
-      return string.trim()
-    }
-
-    const renderIcon = tech => {
-      if (tech.localeCompare("JavaScript") === 0) return (<img src={jsIcon} alt="javascript.svg" className={styles.icon}/>)
-      if (tech.localeCompare("CSS") === 0) return <img src={cssIcon} alt="css.svg" className={styles.icon}/>
-      if (tech.localeCompare("HTML") === 0) return <img src={htmlIcon} alt="html5.svg" className={styles.icon}/>
-      if (tech.localeCompare("PHP") === 0) return <img src={phpIcon} alt="php.svg" className={styles.icon}/>
-      if (tech.localeCompare("Python") === 0) return <img src={pythonIcon} alt="python.svg" className={styles.icon}/>
-      if (tech.localeCompare("React") === 0) return <img src={reactIcon} alt="react.svg" className={styles.icon}/>
-      if (tech.localeCompare("MySQL") === 0) return <img src={mysqlIcon} alt="mysql.svg" className={styles.icon}/>
+    const renderTechList = () => {
+      return this.props.project.techUsed.map(tech => {
+        return (
+          <figure className={styles.iconContainer}>
+            <img src={this.icons[tech]} alt={tech} className={styles.icon}/>
+            <figcaption className={styles.caption}>{tech}</figcaption>
+          </figure>)
+      })
     }
 
     return (
@@ -75,18 +78,11 @@ class Project extends React.Component {
         <h3>{this.props.project.name}</h3>
         <hr/>
         <div className={styles.container}>
-          {this.props.project.techUsed.map(tech => {
-            return (
-              <figure className={styles.iconContainer}>
-                {renderIcon(tech)}
-                <figcaption className={styles.caption}>{tech}</figcaption>
-              </figure>
-              )
-            })
-          }
+          {renderTechList()}
         </div>
         <p>{this.props.project.description}</p>
-        <a href={this.props.project.gitLink}>{this.props.project.name} - Github</a>
+        <a href={this.props.project.link}>Live Site</a>
+        <a href={this.props.project.gitLink}>GitHub Repo</a>
       </article>
     );
   }

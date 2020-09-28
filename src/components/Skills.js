@@ -17,50 +17,56 @@ class Skills extends React.Component {
     super(props);
     this.skills = {
       javaScript: {
-        displayName: "JavaScript (ES6)",
+        displayName: "JavaScript",
         icon: jsIcon,
         color: "#e4ba42",
         skillLevel: "70%",
       },
       html: {
-        displayName: "HTML 5",
+        displayName: "HTML",
         icon: htmlIcon,
         color: "#e34c26",
         skillLevel: "90%",
       },
       css : {
-        displayName: "CSS 3",
+        displayName: "CSS",
         icon: cssIcon,
         color: "#563d7c",
         skillLevel: "70%",
       },
       python: {
-        displayName: "Python 3",
+        displayName: "Python",
         icon: pythonIcon,
         color: "#3572a5",
         skillLevel: "75%",
       },
       php: {
-        displayName: "PHP 7",
+        displayName: "PHP",
         icon: phpIcon,
         color: "#4f5d95",
         skillLevel: "30%",
       }
     }
-    this.skillsSummary = ``;
   }
 
   render() {
     return (
       <section>
         <h2>[...Skills]</h2>
-        <article className={styles.article}>
+        <article>
+          <h3>Frontend</h3>
+          <hr/>
           <div className={styles.container}>
             <Skill skill={this.skills.javaScript} />
             <Skill skill={this.skills.html} />
             <Skill skill={this.skills.css} />
+          </div>
+          <h3>Backend</h3>
+          <hr/>
+          <div className={styles.container}>
             <Skill skill={this.skills.python} />
           </div>
+
         </article>
         <Anchor name={"github-overview"} />
         <article>

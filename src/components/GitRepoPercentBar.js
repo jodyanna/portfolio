@@ -19,8 +19,8 @@ class GitRepoPercentBar extends React.Component {
       .then(data => this.setState({isLoading: false, gitData: this.createStateObject(data)}))
   }
 
-  async githubAPIRequest(repo) {
-    return await ajaxRequest(`https://api.github.com/repos/${this.props.username}/${repo}/languages`)
+  githubAPIRequest(repo) {
+    return ajaxRequest(`https://api.github.com/repos/${this.props.username}/${repo}/languages`)
   }
 
   calcGitRepoLangUsage(data) {

@@ -20,6 +20,7 @@ export const ajaxRequest = (url) => {
     };
     xhttp.open("GET", url, true);
     xhttp.send();
+    setTimeout(() => {}, 1000)
   })
 }
 

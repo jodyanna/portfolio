@@ -18,8 +18,8 @@ class GitAccountSummary extends React.Component {
       .then(data => this.setState({isLoading: false, repos: data}));
   }
 
-  async githubAPIRequest(username) {
-    return await ajaxRequest(`https://api.github.com/users/${username}/repos`)
+  githubAPIRequest(username) {
+    return ajaxRequest(`https://api.github.com/users/${username}/repos`)
   }
 
   render() {
