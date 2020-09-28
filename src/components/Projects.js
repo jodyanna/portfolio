@@ -74,15 +74,31 @@ class Project extends React.Component {
     }
 
     return (
-      <article>
+      <article className={styles.article}>
         <h3>{this.props.project.name}</h3>
         <hr/>
         <div className={styles.container}>
           {renderTechList()}
         </div>
-        <p>{this.props.project.description}</p>
-        <a href={this.props.project.link}>Live Site</a>
-        <a href={this.props.project.gitLink}>GitHub Repo</a>
+        <div className={styles.container}>
+          <div className={styles.textContainer}>
+            {this.props.project.description}
+          </div>
+          <div className={styles.buttonContainer}>
+            <button className={styles.button} onClick={e => {
+              e.preventDefault();
+              window.location.href = this.props.project.link;
+            }}
+            >View Site</button>
+            <button className={styles.button} onClick={e => {
+              e.preventDefault();
+              window.location.href = this.props.project.gitLink;
+            }}
+            >Git Repo</button>
+          </div>
+        </div>
+
+
       </article>
     );
   }

@@ -1,4 +1,16 @@
 
+.article {
+    width: 80%;
+
+    margin: 0 0 6em 0;
+    padding: 0.5em;
+
+    background-color: #292d3e;
+
+    border: #373d49 5px solid;
+    border-radius: 5px;
+}
+
 .container {
     display: flex;
     display: -webkit-flex;
@@ -7,6 +19,7 @@
     justify-content: center;
 
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .caption {
@@ -31,4 +44,43 @@
 
     flex-direction: column;
     margin: 0;
+}
+
+.textContainer {
+
+    margin: 2em 0.2em;
+}
+
+.buttonContainer {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+
+    margin: 1em 1em;
+
+}
+
+.button {
+    padding: 1em;
+
+    background-color: transparent;
+
+    border: #373d49 ridge 4px;
+    border-radius: 5px;
+
+    box-shadow: 2px 4px #121212;
+
+    font-size: 1em;
+    color: hotpink;
+}
+
+.button:hover {
+    color: springgreen;
+    cursor: pointer;
 }
