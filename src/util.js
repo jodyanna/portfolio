@@ -1,15 +1,24 @@
 import React from "react";
 
 
-export const setSectionHeight = () => {
+/****************************** React Components ******************************/
+
+export default function Anchor(props) {
+  return <span id={props.name} className={"anchor"} />
+}
+
+
+/****************************** Utility Functions ******************************/
+
+export const getBrowserHeight = () => {
   //https://stackoverflow.com/questions/1038727/
-  document.getElementsByTagName("section")[0].style.height = Math.max(
+  return  Math.max(
     document.body.scrollHeight,
     document.documentElement.scrollHeight,
     document.body.offsetHeight,
     document.documentElement.offsetHeight,
     document.documentElement.clientHeight
-  ).toString() + "px";
+  );
 }
 
 export const ajaxRequest = (url) => {
@@ -25,18 +34,11 @@ export const ajaxRequest = (url) => {
 }
 
 export const roundDecimal = (num, exp) => {
-  const precision = Math.pow(10, exp);
+  const precision = 10**exp;
 
   return Math.round((num + Number.EPSILON) * precision) / precision;
 }
 
 export const lowerFirstChar = (string) => {
   return string.charAt(0).toLowerCase() + string.slice(1);
-}
-
-
-/****************************** React Components ******************************/
-
-export default function Anchor(props) {
-  return <span id={props.name} className={"anchor"} />
 }

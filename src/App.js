@@ -1,14 +1,13 @@
 import React from 'react';
 
 import Header from './components/Header.js';
-import Anchor from "./util";
-import Summary from './components/Summary.js';
+import Intro from './components/Intro.js';
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-
+import Anchor from "./util";
 
 function App() {
   return (
@@ -16,7 +15,7 @@ function App() {
       <Header />
       <div id={"content"}>
         <Anchor name={"top"} />
-        <Summary />
+        <Intro />
         <Anchor name={"skills"} />
         <Skills />
         <Anchor name={"projects"} />

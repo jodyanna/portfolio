@@ -16,20 +16,26 @@ class Projects extends React.Component {
     this.projectOne = {
       name: "listen-bot",
       id: "listen-bot",
+      type: "Full Stack Web App",
       techUsed: ["JavaScript", "CSS", "HTML", "PHP", "MySQL"],
-      description: `A simple web app that allows users to create and read blog posts anonymously. User posts are stored 
-                  in a MySQL database with CRUD operations written in PHP. View uses basic HTML and custom CSS styles
-                  with dynamic content rendered by JavaScript.`,
+      description: [
+        "A simple web app that allows users to create and read blog posts anonymously",
+        "",
+        ""
+      ],
       link: "",
       gitLink: "https://github.com/jodyanna/listen-bot",
     }
     this.projectTwo = {
       name: "Spiral Designs",
       id: "spiral-designs",
+      type: "Web App",
       techUsed: ["JavaScript", "CSS", "HTML"],
-      description: `Web app that displays an arithmetic spiral animation using HTML canvas. Spiral is rendered at 10 fps
-                  with all settings being updated in real time. Written with vanilla JavaScript in an object oriented 
-                  design paradigm.`,
+      description: [
+        "Web app that displays an arithmetic spiral animation using HTML canvas",
+        "Spiral is rendered at 10 fps with all settings being updated in real time",
+        ""
+      ],
       link: "https://spiral-designs.netlify.app/",
       gitLink: "https://github.com/jodyanna/spiral_designs",
     }
@@ -76,14 +82,15 @@ class Project extends React.Component {
     return (
       <article className={styles.article}>
         <h3>{this.props.project.name}</h3>
+        <h4 className={styles.caption}>{this.props.project.type}</h4>
         <hr/>
         <div className={styles.container}>
           {renderTechList()}
         </div>
         <div className={styles.container}>
-          <div className={styles.textContainer}>
-            {this.props.project.description}
-          </div>
+          <ul className={styles.textContainer}>
+            {this.props.project.description.map(desc => <li className={styles.li}>{desc}</li>)}
+          </ul>
           <div className={styles.buttonContainer}>
             <button className={styles.button} onClick={e => {
               e.preventDefault();
@@ -97,8 +104,6 @@ class Project extends React.Component {
             >Git Repo</button>
           </div>
         </div>
-
-
       </article>
     );
   }

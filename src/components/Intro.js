@@ -1,15 +1,20 @@
 import React from 'react';
-import styles from "../styles/modules/Summary.module.css";
+
+import {getBrowserHeight} from "../util";
+
+import styles from "../styles/modules/Intro.module.css";
 
 
-class Summary extends React.Component {
+class Intro extends React.Component {
   constructor(props) {
     super(props);
     this.state = {textIndex: 0};
     this.summaryText = ["Teaching computers how to solve problems",
       "Making clean, effective, and intuitive applications",
-      "Inappropriate jokes, shows up late, bad attitude"
+      ""
     ]
+    this.headerOffset = 70;
+    this.sectionHeight = (getBrowserHeight() - this.headerOffset).toString() + "px";
   }
 
   componentDidMount() {
@@ -27,15 +32,18 @@ class Summary extends React.Component {
 
   render() {
     return (
-      <section>
-        <article>
+      <section style={{height: this.sectionHeight}}>
+        <h2>Hi!</h2>
+        <article className={styles.article}>
           <p>Self-taught hobbyist programmer seeking employment as a Jr. Web Developer</p>
           <p>{this.summaryText[this.state.textIndex]}</p>
         </article>
+        <div className={styles.circleContainer}>
+        </div>
       </section>
     );
   }
 }
 
 
-export default Summary;
+export default Intro;

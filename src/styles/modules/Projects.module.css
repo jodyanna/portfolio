@@ -48,7 +48,13 @@
 
 .textContainer {
 
-    margin: 2em 0.2em;
+    margin: 2em 0.2em 0 0.2em;
+    padding: 0;
+}
+
+.li {
+    margin: 1em 0;
+    list-style: none;
 }
 
 .buttonContainer {
@@ -67,6 +73,9 @@
 }
 
 .button {
+    width: 150px;
+
+    margin: 1em 0;
     padding: 1em;
 
     background-color: transparent;

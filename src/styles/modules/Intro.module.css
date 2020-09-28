@@ -1,0 +1,33 @@
+
+.h2 {
+    font-family: monospace;
+    width: 80%;
+    margin-bottom: 0.2em;
+    text-align: left;
+}
+
+.article {
+    width: 80%;
+
+    margin: 0 0 6em 0;
+    padding: 0.5em;
+}
+
+.container {
+    display: flex;
+    display: -webkit-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.circleContainer {
+    width: 50%;
+    height: 500px;
+
+    border-radius: 50%;
+    border: #373d49 5px solid;
+}
