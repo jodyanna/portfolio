@@ -1,4 +1,9 @@
 
+.section {
+    margin-top: 0;
+    justify-content: space-evenly;
+}
+
 .h2 {
     font-family: monospace;
     width: 80%;
@@ -7,9 +12,9 @@
 }
 
 .article {
-    width: 80%;
+    width: 300px;
 
-    margin: 0 0 6em 0;
+    margin: 0 0 2em 0;
     padding: 0.5em;
 }
 
@@ -23,11 +28,32 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+.textContainer {
+    padding: 1em;
+}
+
+.greeting {
+    font-size: 5em;
+    text-align: center;
+}
+.nutshell {
+    font-size: 1.3em;
+    text-align: center;
+}
+.tagline {
+    font-size: 1em;
+    text-align: center;
+}
 
 .circleContainer {
-    width: 50%;
-    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+
+    min-width: 300px;
+    min-height: 300px;
 
     border-radius: 50%;
     border: #373d49 5px solid;
 }
+

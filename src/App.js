@@ -12,10 +12,10 @@ import Anchor from "./util";
 function App() {
   return (
     <body>
+      <Anchor name={"top"} />
+      <Intro />
       <Header />
       <div id={"content"}>
-        <Anchor name={"top"} />
-        <Intro />
         <Anchor name={"skills"} />
         <Skills />
         <Anchor name={"projects"} />

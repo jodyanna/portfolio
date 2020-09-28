@@ -1,13 +1,13 @@
 
 .container {
+    position: absolute;
+    z-index: 1;
+
     display: flex;
     display: -webkit-flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: flex-end;
 
-    float: right;
-
-    margin-left: auto;
+    width: 100%;
 }
 
 .menuVisible {
