@@ -12,7 +12,6 @@ class Intro extends React.Component {
     this.sectionHeight = (getBrowserHeight() - this.headerOffset).toString() + "px";
   }
 
-
   render() {
     return (
       <section style={{height: this.sectionHeight}} className={styles.section}>

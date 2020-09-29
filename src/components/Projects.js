@@ -71,11 +71,7 @@ class Project extends React.Component {
   render() {
     const renderTechList = () => {
       return this.props.project.techUsed.map(tech => {
-        return (
-          <figure className={styles.iconContainer}>
-            <img src={this.icons[tech]} alt={tech} className={styles.icon}/>
-            <figcaption className={styles.caption}>{tech}</figcaption>
-          </figure>)
+        return <TechFig key={tech} tech={tech} icons={this.icons} />
       })
     }
 
@@ -89,7 +85,7 @@ class Project extends React.Component {
         </div>
         <div className={styles.container}>
           <ul className={styles.textContainer}>
-            {this.props.project.description.map(desc => <li className={styles.li}>{desc}</li>)}
+            {this.props.project.description.map((desc, i) => <li key={i} className={styles.li}>{desc}</li>)}
           </ul>
           <div className={styles.buttonContainer}>
             <button className={styles.button} onClick={e => {
@@ -108,5 +104,16 @@ class Project extends React.Component {
     );
   }
 }
+
+
+function TechFig(props) {
+  return (
+    <figure className={styles.iconContainer}>
+      <img src={props.icons[props.tech]} alt={props.tech} className={styles.icon}/>
+      <figcaption className={styles.caption}>{props.tech}</figcaption>
+    </figure>
+  );
+}
+
 
 export default Projects;

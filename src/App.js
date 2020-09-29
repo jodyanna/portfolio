@@ -11,7 +11,7 @@ import Anchor from "./util";
 
 function App() {
   return (
-    <body>
+    <div id={"body"}>
       <Anchor name={"top"} />
       <Intro />
       <Header />
@@ -26,7 +26,7 @@ function App() {
         <Contact />
       </div>
       <Footer />
-    </body>
+    </div>
   );
 }
 

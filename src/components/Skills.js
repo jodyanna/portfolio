@@ -6,8 +6,6 @@ import htmlIcon from '../img/icons/html5.svg';
 import cssIcon from '../img/icons/css.svg';
 import pythonIcon from '../img/icons/python.svg';
 import phpIcon from '../img/icons/php.svg';
-import reactIcon from '../img/icons/react.svg';
-import mysqlIcon from '../img/icons/mysql.svg';
 
 import styles from "../styles/modules/Skills.module.css";
 import Anchor from "../util";
@@ -66,7 +64,6 @@ class Skills extends React.Component {
           <div className={styles.container}>
             <Skill skill={this.skills.python} />
           </div>
-
         </article>
         <Anchor name={"github-overview"} />
         <article>
@@ -78,20 +75,14 @@ class Skills extends React.Component {
 }
 
 
-class Skill extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div className={styles.containerRow}>
-        <img src={this.props.skill.icon} alt="mysql.svg" className={styles.icon}/>
-        <p>{this.props.skill.displayName}</p>
-      </div>
-    )
-  }
+function Skill(props) {
+  return (
+    <div className={styles.containerRow}>
+      <img src={props.skill.icon} alt="mysql.svg" className={styles.icon}/>
+      <p>{props.skill.displayName}</p>
+    </div>
+  );
 }
-
 
 
 export default Skills;

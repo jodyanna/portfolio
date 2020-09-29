@@ -8,7 +8,7 @@ class Navigation extends React.Component {
     super(props);
     this.state = {
       isVisible: false,
-    }
+    };
   }
 
   handleClick = () => {
@@ -26,56 +26,45 @@ class Navigation extends React.Component {
   }
 }
 
-class NavButton extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <button className={styles.navButton} onClick={this.props.onClick}>
-        [ <span className={styles.innerButton}>{this.props.label}</span> ]
-      </button>
-    )
-  }
+function NavButton(props) {
+  return (
+    <button className={styles.navButton} onClick={props.onClick}>
+      [ <span className={styles.innerButton}>{props.label}</span> ]
+    </button>
+  );
 }
 
-class NavMenu extends React.Component {
-  constructor(props) {
-    super(props);
+function NavMenu(props) {
+  const determineStyleClass = () => {
+    if (props.isVisible) return styles.menuVisible
+    else return styles.menuNotVisible
   }
 
-  render() {
-    const determineStyleClass = () => {
-      if (this.props.isVisible) return styles.menuVisible
-      else return styles.menuNotVisible
-    }
-
-    return (
-      <ul className={determineStyleClass()}>
-        <li className={styles.navItemSub}>
-          <NavButton label={"X"} onClick={this.props.onClick} />
-        </li>
-        <li className={styles.navItem}><a href={"#top"} onClick={this.props.onClick}>Top</a></li>
-        <li className={styles.navItemSub}><a href={"#"} onClick={this.props.onClick}>Resume</a></li>
-        <hr/>
-        <li className={styles.navItem}><a href={"#skills"} onClick={this.props.onClick}>Skills</a></li>
-        <li className={styles.navItemSub}><a href={"#github-overview"} onClick={this.props.onClick}>GitHub Overview</a></li>
-        <hr/>
-        <li className={styles.navItem}><a href={"#projects"} onClick={this.props.onClick}>Projects</a></li>
-        <li className={styles.navItemSub}><a href={"#listen-bot"} onClick={this.props.onClick}>listen-bot</a></li>
-        <li className={styles.navItemSub}><a href={"#spiral-designs"} onClick={this.props.onClick}>Spiral Designs</a></li>
-        <hr/>
-        <li className={styles.navItem}><a href={"#education"} onClick={this.props.onClick}>Education</a></li>
-        <li className={styles.navItemSub}><a href={"#languages"} onClick={this.props.onClick}>Languages</a></li>
-        <hr/>
-        <li className={styles.navItem}><a href={"#contact"} onClick={this.props.onClick}>Contact</a></li>
-      </ul>
-    )
-  }
+  return (
+    <ul className={determineStyleClass()}>
+      <li className={styles.navItemSub}>
+        <NavButton label={"X"} onClick={props.onClick} />
+      </li>
+      <li className={styles.navItem}><a href={"#top"} onClick={props.onClick}>Top</a></li>
+      <li className={styles.navItemSub}><a href={"#"} onClick={props.onClick}>Resume</a></li>
+      <hr/>
+      <li className={styles.navItem}><a href={"#skills"} onClick={props.onClick}>Skills</a></li>
+      <li className={styles.navItemSub}><a href={"#github-overview"} onClick={props.onClick}>GitHub Overview</a></li>
+      <hr/>
+      <li className={styles.navItem}><a href={"#projects"} onClick={props.onClick}>Projects</a></li>
+      <li className={styles.navItemSub}><a href={"#listen-bot"} onClick={props.onClick}>listen-bot</a></li>
+      <li className={styles.navItemSub}><a href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</a></li>
+      <hr/>
+      <li className={styles.navItem}><a href={"#education"} onClick={props.onClick}>Education</a></li>
+      <li className={styles.navItemSub}><a href={"#languages"} onClick={props.onClick}>Languages</a></li>
+      <hr/>
+      <li className={styles.navItem}><a href={"#contact"} onClick={props.onClick}>Contact</a></li>
+    </ul>
+  )
 }
 
-function NavBar(props) {
+
+function NavBar() {
   return (
     <div className={styles.navBarContainer}>
       <ul className={styles.navBar}>
@@ -86,7 +75,7 @@ function NavBar(props) {
         <li className={styles.navBarItem}><a href={"#contact"}>Contact</a></li>
       </ul>
     </div>
-  )
+  );
 }
 
 export default Navigation;

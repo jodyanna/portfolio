@@ -28,7 +28,7 @@ class GitAccountSummary extends React.Component {
         return (
           <span>Programming languages across <a href={`https://github.com/${this.props.username}?tab=repositories`}>
           {this.state.repos.length}</a> repositories</span>
-        )
+        );
       }
     }
 

@@ -22,7 +22,7 @@ code {
     monospace;
 }
 
-body, section, article {
+#body, section, article {
   display: flex;
   display: -webkit-flex;
 

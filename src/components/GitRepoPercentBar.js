@@ -69,18 +69,19 @@ class GitRepoPercentBar extends React.Component {
       if (!this.state.isLoading) {
         return (
           <div className={styles.barContainer}>
-            {Object.values(this.state.gitData).map(obj => <BarPart label={obj.displayName}
+            {Object.values(this.state.gitData).map(obj => <BarPart key={obj.displayName}
+                                                                   label={obj.displayName}
                                                                    width={obj.width}
                                                                    backgroundColor={obj.backgroundColor}/>)}
           </div>
-        )
+        );
       }
     }
     return (
       <div className={styles.containerCol}>
         {createBar()}
       </div>
-    )
+    );
   }
 }
 
@@ -92,7 +93,7 @@ function BarPart(props) {
       </div>
       <span className={styles.label}>{props.label}</span>
     </div>
-  )
+  );
 }
 
 export default GitRepoPercentBar;
