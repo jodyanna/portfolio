@@ -19,7 +19,7 @@ class Intro extends React.Component {
         <div className={styles.textContainer}>
           <div className={styles.greeting}>Hello</div>
           <div className={styles.nutshell}>
-            <span>I'm an aspiring web developer</span><br/>
+            <span>I am an aspiring web developer</span><br/>
             <span>from the Chicago land area.</span>
           </div>
         </div>
@@ -29,8 +29,6 @@ class Intro extends React.Component {
         <div className={styles.textContainer}>
           <div className={styles.tagline}>
             <span>
-              I'm all about having a good time and getting the job done!<br/>
-              <br/>
               My name is,
             </span>
             <h1 className={styles.h1}>Joseph D'Anna</h1>

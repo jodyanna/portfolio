@@ -1,6 +1,7 @@
 import React from 'react';
-import navIcon from "../img/icons/menu.png";
+
 import styles from '../styles/modules/Navigation.module.css';
+
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -18,7 +19,8 @@ class Navigation extends React.Component {
     return (
       <nav className={styles.container}>
         <NavButton label={"NAV"} onClick={this.handleClick} />
-        <NavMenu isVisible={this.state.isVisible} onClick={this.handleClick}/>
+        <NavMenu isVisible={this.state.isVisible} onClick={this.handleClick} />
+        <NavBar />
       </nav>
     );
   }
@@ -71,6 +73,20 @@ class NavMenu extends React.Component {
       </ul>
     )
   }
+}
+
+function NavBar(props) {
+  return (
+    <div className={styles.navBarContainer}>
+      <ul className={styles.navBar}>
+        <li className={styles.navBarItem}><a href={"#top"}>Top</a></li>
+        <li className={styles.navBarItem}><a href={"#skills"}>Skills</a></li>
+        <li className={styles.navBarItem}><a href={"#projects"}>Projects</a></li>
+        <li className={styles.navBarItem}><a href={"#education"}>Education</a></li>
+        <li className={styles.navBarItem}><a href={"#contact"}>Contact</a></li>
+      </ul>
+    </div>
+  )
 }
 
 export default Navigation;

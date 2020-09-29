@@ -47,7 +47,6 @@
 }
 
 .textContainer {
-
     margin: 2em 0.2em 0 0.2em;
     padding: 0;
 }
@@ -78,7 +77,7 @@
     margin: 1em 0;
     padding: 1em;
 
-    background-color: transparent;
+    background-color: #393e4b;
 
     border: #373d49 ridge 4px;
     border-radius: 5px;
