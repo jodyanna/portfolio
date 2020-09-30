@@ -26,6 +26,7 @@ class Navigation extends React.Component {
   }
 }
 
+
 function NavButton(props) {
   return (
     <button className={styles.navButton} onClick={props.onClick}>
@@ -33,6 +34,7 @@ function NavButton(props) {
     </button>
   );
 }
+
 
 function NavMenu(props) {
   const determineStyleClass = () => {
@@ -58,8 +60,6 @@ function NavMenu(props) {
       <hr/>
       <li className={styles.navItem}><a href={"#education"} onClick={props.onClick}>Education</a></li>
       <li className={styles.navItemSub}><a href={"#languages"} onClick={props.onClick}>Languages</a></li>
-      <hr/>
-      <li className={styles.navItem}><a href={"#contact"} onClick={props.onClick}>Contact</a></li>
     </ul>
   )
 }
@@ -73,10 +73,10 @@ function NavBar() {
         <li className={styles.navBarItem}><a href={"#skills"}>Skills</a></li>
         <li className={styles.navBarItem}><a href={"#projects"}>Projects</a></li>
         <li className={styles.navBarItem}><a href={"#education"}>Education</a></li>
-        <li className={styles.navBarItem}><a href={"#contact"}>Contact</a></li>
       </ul>
     </div>
   );
 }
+
 
 export default Navigation;

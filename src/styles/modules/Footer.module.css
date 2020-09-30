@@ -1,7 +1,40 @@
-footer {
-    width: 90%;
+.footer {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 95%;
+
+    padding-bottom: 1em;
 }
 
-footer > p {
+.attributions {
+    width: fit-content;
+
     font-size: 0.5em;
+}
+
+.contact {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    margin-left: auto;
+
+    font-size: 1.5em;
+}
+
+.icon {
+    width: 36px;
+    height: 36px;
+
+    margin: 0 0.5em;
 }
