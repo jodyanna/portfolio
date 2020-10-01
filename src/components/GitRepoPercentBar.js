@@ -1,5 +1,6 @@
 import React from "react";
 import {ajaxRequest, roundDecimal} from "../util";
+import colors from "../colors.json"; // thank you https://github.com/ozh/github-colors
 import styles from "../styles/modules/GitAccount.module.css";
 
 
@@ -9,7 +10,6 @@ class GitRepoPercentBar extends React.Component {
     this.state = {
       isLoading: true,
     };
-    this.colors = require("../colors.json"); // thank you https://github.com/ozh/github-colors
   }
 
   componentDidMount() {
@@ -58,7 +58,7 @@ class GitRepoPercentBar extends React.Component {
       let styles = {};
       styles["displayName"] = sorted[i][0];
       styles["width"] = sorted[i][1].toString() + "%";
-      styles["backgroundColor"] = this.colors[sorted[i][0]]["color"];
+      styles["backgroundColor"] = colors[sorted[i][0]]["color"];
       temp[sorted[i]] = styles;
     }
     return temp

@@ -17,8 +17,8 @@ function Footer() {
         </p>
       </div>
       <div className={styles.contact}>
-        <a href="https://github.com/jodyanna"><img src={githubIcon} alt="github.svg" className={styles.icon}/></a>
         <a href="mailto:jodyanna14.15@gmail.com"><img src={gmailIcon} alt="gmail.svg" className={styles.icon}/></a>
+        <a href="https://github.com/jodyanna"><img src={githubIcon} alt="github.svg" className={styles.icon}/></a>
       </div>
     </footer>
   );

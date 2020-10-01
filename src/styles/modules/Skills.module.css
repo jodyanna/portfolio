@@ -1,4 +1,13 @@
 
+.article {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
 
 .container {
     display: flex;
@@ -6,8 +15,8 @@
     flex-direction: row;
     flex-wrap: wrap;
 
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
 
     margin: 0;
     padding: 0;
@@ -23,17 +32,17 @@
     margin: 1em;
 }
 
-.containerRow {
+.skillContainer {
     display: flex;
     display: -webkit-flex;
     flex-direction: row;
 
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
-    width: 180px;
+    width: 132px;
 
-    margin: 0;
+    margin: 0 1em;
 }
 
 .icon {

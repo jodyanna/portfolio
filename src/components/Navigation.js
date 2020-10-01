@@ -57,9 +57,6 @@ function NavMenu(props) {
       <li className={styles.navItemSub}><a href={"#listen-bot"} onClick={props.onClick}>listen-bot</a></li>
       <li className={styles.navItemSub}><a href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</a></li>
       <li className={styles.navItemSub}><a href={"#portfolio"} onClick={props.onClick}>My Portfolio</a></li>
-      <hr/>
-      <li className={styles.navItem}><a href={"#education"} onClick={props.onClick}>Education</a></li>
-      <li className={styles.navItemSub}><a href={"#languages"} onClick={props.onClick}>Languages</a></li>
     </ul>
   )
 }
@@ -72,7 +69,6 @@ function NavBar() {
         <li className={styles.navBarItem}><a href={"#top"}>Top</a></li>
         <li className={styles.navBarItem}><a href={"#skills"}>Skills</a></li>
         <li className={styles.navBarItem}><a href={"#projects"}>Projects</a></li>
-        <li className={styles.navBarItem}><a href={"#education"}>Education</a></li>
       </ul>
     </div>
   );

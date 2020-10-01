@@ -8,8 +8,7 @@ import ncc from '../img/ncc.png';
 function Education() {
   return (
     <section>
-      <h2>Education++;</h2>
-      <article>
+      <article className={styles.article}>
         <h3>Bachelor of Arts</h3>
         <hr/>
         <span className={styles.schoolName}>North Central College</span>

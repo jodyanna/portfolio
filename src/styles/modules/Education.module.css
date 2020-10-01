@@ -1,4 +1,14 @@
 
+.article {
+    width: fit-content;
+
+    padding: 1em;
+
+    background-color: #292d3e;
+    border: #373d49 5px solid;
+    border-radius: 5px;
+}
+
 .schoolName {
     font-size: 0.75em;
     font-style: italic;
