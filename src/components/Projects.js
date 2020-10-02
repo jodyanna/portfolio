@@ -36,8 +36,8 @@ class Projects extends React.Component {
       id: "spiral-designs",
       type: "Web App",
       techUsed: ["JavaScript", "CSS", "HTML"],
-      overview: `Watch an arithmetic spiral spin endlessly in this interactive application. Tweak the controls right of 
-      the visual display to create a unique spiral of your own design.`,
+      overview: `Watch an arithmetic spiral spin endlessly in this interactive application. Tweak the controls on the right of 
+      the visual display to create unique spirals of your own design.`,
       description: [
         "Spiral animation created using the HTML canvas API",
         "Animation renders at 10 frames per second with settings updated every frame",
@@ -65,12 +65,13 @@ class Projects extends React.Component {
   render() {
     return (
       <section>
+        <h2>Projects</h2>
         <Anchor name={this.projectOne.id} />
-        <Project project={this.projectOne}/>
+        <Project project={this.projectOne} hr={this.props.hr} />
         <Anchor name={this.projectTwo.id} />
-        <Project project={this.projectTwo}/>
+        <Project project={this.projectTwo} hr={this.props.hr} />
         <Anchor name={this.projectThree.id} />
-        <Project project={this.projectThree}/>
+        <Project project={this.projectThree} hr={this.props.hr} />
       </section>
     );
   }
@@ -104,10 +105,12 @@ class Project extends React.Component {
         <div className={styles.heading}>
           <h3 className={styles.name}>{this.props.project.name}</h3>
           <h4 className={styles.caption}>{this.props.project.type}</h4>
-          <a href={this.props.project.link} className={styles.link}>Live Demo</a>
-          <a href={this.props.project.gitLink} className={styles.link}>Code</a>
+          <div className={styles.links}>
+            <a href={this.props.project.link} className={styles.link}>Live Demo</a>
+            <a href={this.props.project.gitLink} className={styles.link}>Code</a>
+          </div>
         </div>
-        <hr/>
+        {this.props.hr}
         <div className={styles.techs}>
           {renderTechList()}
         </div>

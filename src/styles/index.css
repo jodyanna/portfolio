@@ -14,20 +14,12 @@ html {
 
 body {
   margin: 0;
-
-  background-color: #121212;
-  color: #f5f5f5;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-#body, section, article {
+section, article {
   display: flex;
   display: -webkit-flex;
-
   flex-direction: column;
   align-items: center;
 }
@@ -35,21 +27,20 @@ code {
 section {
   width: 100%;
 }
+
 hr {
   border: 0;
   clear: both;
   display: block;
   width: 100%;
-  background-color: #f5f5f5;
   height: 1px;
 }
 
 h2 {
-  font-family: monospace;
-  font-size: 2em;
-  width: 80%;
-  margin: 0 0 0.2em 0;
+  width: 95%;
+  font-size: 3em;
   text-align: left;
+  margin: 0 0 0.5em 0;
 }
 
 h3 {
@@ -57,26 +48,15 @@ h3 {
   margin: 0;
 }
 
-article {
-  width: 95%;
-  margin: 0 0 2em 0;
-  padding: 0.5em;
-  /* background-color: #292d3e;
-  border: #373d49 5px solid;
-  border-radius: 5px; */
-}
-
 a {
   text-decoration: none;
 }
-a:link, a:active {
-  color: aqua;
-}
-a:visited {
-  color: hotpink;
+
+a:visited, a:link, a:active {
+  color: #e55da2;
 }
 a:hover {
-  color: #00fa9a;
+  color: #00e28d;
 }
 
 .anchor {
@@ -88,5 +68,4 @@ a:hover {
   height: 70px; /* fixed header height*/
   margin: -70px 0 0; /* negative fixed header height */
 }
-
 

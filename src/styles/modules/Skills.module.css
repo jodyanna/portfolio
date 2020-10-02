@@ -7,6 +7,11 @@
     align-items: flex-start;
     justify-content: flex-start;
 
+    width: 95%;
+
+    margin: 0 0 4em 0;
+    padding: 0.5em;
+
 }
 
 .container {
@@ -17,6 +22,8 @@
 
     align-items: flex-start;
     justify-content: flex-start;
+
+    width: 100%;
 
     margin: 0;
     padding: 0;

@@ -1,9 +1,7 @@
 import React from 'react';
 
 import {getBrowserHeight} from "../util";
-
 import dropdownArrow from '../img/icons/dropdown-arrow.svg';
-
 import styles from '../styles/modules/Navigation.module.css';
 
 
@@ -86,11 +84,11 @@ class NavBar extends React.Component{
   }
 
   handleScroll = () => {
+    if (!this.state.isMenuUp) return
     if (window.pageYOffset < (this.props.browerHeight - this.menuOffset)) {
       this.setState({isMenuVisible: this.state.isMenuVisible, isMenuUP: true});
     }
     else this.setState({isMenuVisible: this.state.isMenuVisible, isMenuUp: false});
-    console.log(this.state.isMenuUp)
   }
 
   handleClick = () => {

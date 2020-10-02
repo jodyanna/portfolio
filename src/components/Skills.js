@@ -46,9 +46,10 @@ class Skills extends React.Component {
   render() {
     return (
       <section>
+        <h2>Skills</h2>
         <article className={styles.article}>
           <h3>Frontend</h3>
-          <hr/>
+          {this.props.hr}
           <div className={styles.container}>
             <Skill skill={this.skills.javaScript} />
             <Skill skill={this.skills.html} />
@@ -56,14 +57,14 @@ class Skills extends React.Component {
             <Skill skill={this.skills.react} />
           </div>
           <h3>Backend</h3>
-          <hr/>
+          {this.props.hr}
           <div className={styles.container}>
             <Skill skill={this.skills.python} />
           </div>
         </article>
         <Anchor name={"github-overview"} />
-        <article>
-          <GitAccountSummary username={"jodyanna"} />
+        <article className={styles.article}>
+          <GitAccountSummary username={"jodyanna"} hr={this.props.hr} />
         </article>
       </section>
     );

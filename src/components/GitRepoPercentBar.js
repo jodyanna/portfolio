@@ -78,7 +78,7 @@ class GitRepoPercentBar extends React.Component {
       }
     }
     return (
-      <div className={styles.containerCol}>
+      <div className={styles.container}>
         {createBar()}
       </div>
     );

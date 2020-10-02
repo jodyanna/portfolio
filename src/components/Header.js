@@ -3,13 +3,13 @@ import Navigation from "./Navigation";
 import styles from '../styles/modules/Header.module.css';
 
 
-function Header() {
+function Header(props) {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         <Navigation />
       </div>
-      <hr/>
+      {props.hr}
     </header>
   );
 }
