@@ -22,8 +22,8 @@ class Navigation extends React.Component {
     return (
       <nav className={styles.container}>
         <NavButton label={"NAV"} onClick={this.handleClick} />
-        <NavMenu isVisible={this.state.isVisible} onClick={this.handleClick} />
-        <NavBar browerHeight={this.browserHeight}/>
+        <NavMenu isVisible={this.state.isVisible} onClick={this.handleClick} hr={this.props.hr} />
+        <NavBar browerHeight={this.browserHeight} />
       </nav>
     );
   }
@@ -52,10 +52,10 @@ function NavMenu(props) {
       </li>
       <li className={styles.navItem}><a href={"#top"} onClick={props.onClick}>Top</a></li>
       <li className={styles.navItemSub}><a href={"#"} onClick={props.onClick}>Resume</a></li>
-      <hr/>
+      {props.hr}
       <li className={styles.navItem}><a href={"#skills"} onClick={props.onClick}>Skills</a></li>
       <li className={styles.navItemSub}><a href={"#github-overview"} onClick={props.onClick}>GitHub Overview</a></li>
-      <hr/>
+      {props.hr}
       <li className={styles.navItem}><a href={"#projects"} onClick={props.onClick}>Projects</a></li>
       <li className={styles.navItemSub}><a href={"#listen-bot"} onClick={props.onClick}>listen-bot</a></li>
       <li className={styles.navItemSub}><a href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</a></li>

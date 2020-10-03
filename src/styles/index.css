@@ -17,6 +17,10 @@ body {
   padding: 0;
 }
 
+#content {
+  width: 100%;
+}
+
 section, article {
   display: flex;
   display: -webkit-flex;
