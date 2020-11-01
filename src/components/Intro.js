@@ -1,7 +1,6 @@
 import React from 'react';
 
-import {getBrowserHeight} from "../util";
-import self from "../img/self.jpg";
+import { getBrowserHeight } from "../util";
 import styles from "../styles/modules/Intro.module.css";
 
 
@@ -23,7 +22,7 @@ class Intro extends React.Component {
           </div>
         </div>
         <div className={styles.container}>
-          <div style={{backgroundImage:`url(${self})`}} className={styles.circleContainer}/>
+          <div style={{backgroundImage:`url()`}} className={styles.circleContainer}/>
         </div>
         <div className={styles.textContainer}>
           <div className={styles.tagline}>

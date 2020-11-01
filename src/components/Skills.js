@@ -8,7 +8,11 @@ import cssIcon from '../img/icons/css.svg';
 import pythonIcon from '../img/icons/python.svg';
 import phpIcon from '../img/icons/php.svg';
 import reactIcon from '../img/icons/react.svg';
-import gitIcon from '../img/icons/git.png'
+import gitIcon from '../img/icons/git.png';
+import scIcon from '../img/icons/styled-components.png';
+import nodeIcon from '../img/icons/nodejs.svg';
+import npmIcon from '../img/icons/npm.png';
+import mysqlIcon from '../img/icons/mysql.svg';
 
 import styles from "../styles/modules/Skills.module.css";
 
@@ -19,31 +23,47 @@ class Skills extends React.Component {
     this.skills = {
       javaScript: {
         displayName: "JavaScript",
-        icon: jsIcon,
+        icon: jsIcon
       },
       html: {
         displayName: "HTML",
-        icon: htmlIcon,
+        icon: htmlIcon
       },
       css : {
         displayName: "CSS",
-        icon: cssIcon,
+        icon: cssIcon
       },
       python: {
         displayName: "Python",
-        icon: pythonIcon,
+        icon: pythonIcon
       },
       php: {
         displayName: "PHP",
-        icon: phpIcon,
+        icon: phpIcon
       },
       react: {
         displayName: "React",
-        icon: reactIcon,
+        icon: reactIcon
       },
       git: {
         displayName: "Git",
-        icon: gitIcon,
+        icon: gitIcon
+      },
+      styledComponents: {
+        displayName: "styled-components",
+        icon: scIcon
+      },
+      expressNode: {
+        displayName: "Express/Node.js",
+        icon: nodeIcon
+      },
+      npm: {
+        displayName: "npm",
+        icon: npmIcon
+      },
+      mysql: {
+        displayName: "MySQL",
+        icon: mysqlIcon
       }
     }
   }
@@ -61,11 +81,17 @@ class Skills extends React.Component {
             <Skill skill={this.skills.css} />
             <Skill skill={this.skills.react} />
           </div>
-          <h3>Other</h3>
+          <h3>Backend/Database</h3>
           {this.props.hr}
           <div className={styles.container}>
-            <Skill skill={this.skills.python} />
+            <Skill skill={this.skills.expressNode} />
+            <Skill skill={this.skills.mysql} />
+          </div>
+          <h3>Tools</h3>
+          {this.props.hr}
+          <div className={styles.container}>
             <Skill skill={this.skills.git} />
+            <Skill skill={this.skills.npm} />
           </div>
         </article>
         <Anchor name={"github-overview"} />

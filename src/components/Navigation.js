@@ -56,7 +56,7 @@ function NavMenu(props) {
       <li className={styles.navItem}><a href={"#skills"} onClick={props.onClick}>Skills</a></li>
       {props.hr}
       <li className={styles.navItem}><a href={"#projects"} onClick={props.onClick}>Projects</a></li>
-      <li className={styles.navItemSub}><a href={"#listen-bot"} onClick={props.onClick}>listen-bot</a></li>
+      <li className={styles.navItemSub}><a href={"#chatter-bot"} onClick={props.onClick}>Chatter-bot</a></li>
       <li className={styles.navItemSub}><a href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</a></li>
       <li className={styles.navItemSub}><a href={"#portfolio"} onClick={props.onClick}>My Portfolio</a></li>
     </ul>
@@ -138,7 +138,7 @@ function DropdownMenu(props) {
 
   return (
     <ul className={determineStyleClass()} style={determinePosition()}>
-      <li className={styles.dropdownItem}><a href={"#listen-bot"} onClick={props.onClick}>listen-bot</a></li>
+      <li className={styles.dropdownItem}><a href={"#listen-bot"} onClick={props.onClick}>Chatter-bot</a></li>
       <li className={styles.dropdownItem}><a href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</a></li>
       <li className={styles.dropdownItem}><a href={"#portfolio"} onClick={props.onClick}>My Portfolio</a></li>
     </ul>

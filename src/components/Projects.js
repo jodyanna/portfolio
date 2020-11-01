@@ -21,8 +21,8 @@ class Projects extends React.Component {
       name: "Chatter-bot",
       id: "Chatter-bot",
       type: "Web Application",
-      techUsed: ["React", "styled-components", "Express/Node.js", "MySQL"],
-      overview: "Create or read random posts with this simple blog style application.",
+      techUsed: ["React", "styled-components", "JavaScript", "Express/Node.js", "MySQL"],
+      overview: "Create posts, chat rooms, and user accounts for topical discussion.",
       details: [
         "Create posts up to 255 characters in length",
         "Pre-validation of form for an intuitive user experience",
@@ -34,7 +34,7 @@ class Projects extends React.Component {
     this.projectTwo = {
       name: "Spiral Designs",
       id: "spiral-designs",
-      type: "Web App",
+      type: "Interactive Website",
       techUsed: ["JavaScript", "CSS", "HTML"],
       overview: "Watch an arithmetic spiral spin endlessly in this mesmerizing interactive application.",
       details: [
@@ -48,7 +48,7 @@ class Projects extends React.Component {
     this.projectThree = {
       name: "My Portfolio",
       id: "portfolio",
-      type: "React App",
+      type: "Website",
       techUsed: ["React", "JavaScript", "CSS", "HTML"],
       overview: "This website you are on right now!",
       details: [
@@ -121,9 +121,6 @@ class Project extends React.Component {
         <div className={styles.overview}>
           {this.props.project.overview}
         </div>
-        <ul>
-          {renderDetails()}
-        </ul>
       </article>
     );
   }
