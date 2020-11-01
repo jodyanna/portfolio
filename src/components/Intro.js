@@ -18,7 +18,7 @@ class Intro extends React.Component {
         <div className={styles.textContainer}>
           <div className={styles.greeting}>Hello</div>
           <div className={styles.nutshell}>
-            <span>I am an aspiring web developer</span><br/>
+            <span>I am a web developer</span><br/>
             <span>from the Chicago land area.</span>
           </div>
         </div>

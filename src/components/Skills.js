@@ -8,6 +8,7 @@ import cssIcon from '../img/icons/css.svg';
 import pythonIcon from '../img/icons/python.svg';
 import phpIcon from '../img/icons/php.svg';
 import reactIcon from '../img/icons/react.svg';
+import gitIcon from '../img/icons/git.png'
 
 import styles from "../styles/modules/Skills.module.css";
 
@@ -39,6 +40,10 @@ class Skills extends React.Component {
       react: {
         displayName: "React",
         icon: reactIcon,
+      },
+      git: {
+        displayName: "Git",
+        icon: gitIcon,
       }
     }
   }
@@ -56,10 +61,11 @@ class Skills extends React.Component {
             <Skill skill={this.skills.css} />
             <Skill skill={this.skills.react} />
           </div>
-          <h3>Backend</h3>
+          <h3>Other</h3>
           {this.props.hr}
           <div className={styles.container}>
             <Skill skill={this.skills.python} />
+            <Skill skill={this.skills.git} />
           </div>
         </article>
         <Anchor name={"github-overview"} />

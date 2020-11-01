@@ -6,9 +6,10 @@ import cssIcon from '../img/icons/css.svg';
 import htmlIcon from '../img/icons/html5.svg';
 import jsIcon from '../img/icons/javascript.svg';
 import mysqlIcon from '../img/icons/mysql.svg';
-import phpIcon from '../img/icons/php.svg';
+import nodeIcon from '../img/icons/nodejs.svg';
 import pythonIcon from '../img/icons/python.svg';
 import reactIcon from '../img/icons/react.svg';
+import scIcon from '../img/icons/styled-components.png';
 
 import styles from '../styles/modules/Projects.module.css';
 
@@ -17,18 +18,18 @@ class Projects extends React.Component {
   constructor(props) {
     super(props);
     this.projectOne = {
-      name: "listen-bot",
-      id: "listen-bot",
-      type: "Full Stack Web App",
-      techUsed: ["JavaScript", "CSS", "HTML", "PHP", "MySQL"],
-      overview: "Create or read random posts in this simple blog style application.",
+      name: "Chatter-bot",
+      id: "Chatter-bot",
+      type: "Web Application",
+      techUsed: ["React", "styled-components", "Express/Node.js", "MySQL"],
+      overview: "Create or read random posts with this simple blog style application.",
       details: [
         "Create posts up to 255 characters in length",
         "Pre-validation of form for an intuitive user experience",
-        "Random post is pulled from entire collection of posts made by previous users",
+        "Random post is pulled from the entire collection of previous user posts",
       ],
       link: "",
-      gitLink: "https://github.com/jodyanna/listen-bot",
+      gitLink: "https://github.com/jodyanna/chatter-bot",
     }
     this.projectTwo = {
       name: "Spiral Designs",
@@ -39,7 +40,7 @@ class Projects extends React.Component {
       details: [
         "Spiral animation renders at 10 frames per second with settings updated every frame",
         "Colors are customizable using RGB value separated sliders",
-        "Spiral width, length, and thickness can be manipulated via designated sliders"
+        "Spiral width, length, and thickness adjusted via designated sliders"
       ],
       link: "https://spiral-designs.netlify.app/",
       gitLink: "https://github.com/jodyanna/spiral_designs",
@@ -83,9 +84,10 @@ class Project extends React.Component {
       "HTML": htmlIcon,
       "CSS": cssIcon,
       "Python": pythonIcon,
-      "PHP": phpIcon,
+      "Express/Node.js": nodeIcon,
       "MySQL": mysqlIcon,
-      "React": reactIcon
+      "React": reactIcon,
+      "styled-components": scIcon,
     }
   }
 
@@ -119,7 +121,7 @@ class Project extends React.Component {
         <div className={styles.overview}>
           {this.props.project.overview}
         </div>
-        <ul className={styles.details}>
+        <ul>
           {renderDetails()}
         </ul>
       </article>

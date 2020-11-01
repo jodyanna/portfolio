@@ -54,7 +54,6 @@ function NavMenu(props) {
       <li className={styles.navItemSub}><a href={"#"} onClick={props.onClick}>Resume</a></li>
       {props.hr}
       <li className={styles.navItem}><a href={"#skills"} onClick={props.onClick}>Skills</a></li>
-      <li className={styles.navItemSub}><a href={"#github-overview"} onClick={props.onClick}>GitHub Overview</a></li>
       {props.hr}
       <li className={styles.navItem}><a href={"#projects"} onClick={props.onClick}>Projects</a></li>
       <li className={styles.navItemSub}><a href={"#listen-bot"} onClick={props.onClick}>listen-bot</a></li>
