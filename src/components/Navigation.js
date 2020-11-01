@@ -138,7 +138,7 @@ function DropdownMenu(props) {
 
   return (
     <ul className={determineStyleClass()} style={determinePosition()}>
-      <li className={styles.dropdownItem}><a href={"#listen-bot"} onClick={props.onClick}>Chatter-bot</a></li>
+      <li className={styles.dropdownItem}><a href={"#chatter-bot"} onClick={props.onClick}>Chatter-bot</a></li>
       <li className={styles.dropdownItem}><a href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</a></li>
       <li className={styles.dropdownItem}><a href={"#portfolio"} onClick={props.onClick}>My Portfolio</a></li>
     </ul>

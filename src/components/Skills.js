@@ -1,4 +1,5 @@
 import React from 'react';
+
 import GitAccountSummary from './GitAccountSummary';
 import Anchor from "../util";
 
@@ -15,6 +16,7 @@ import npmIcon from '../img/icons/npm.png';
 import mysqlIcon from '../img/icons/mysql.svg';
 
 import styles from "../styles/modules/Skills.module.css";
+import resume from "../img/jpdanna-resume.pdf";
 
 
 class Skills extends React.Component {
@@ -46,7 +48,7 @@ class Skills extends React.Component {
         icon: reactIcon
       },
       git: {
-        displayName: "Git",
+        displayName: "git",
         icon: gitIcon
       },
       styledComponents: {
@@ -72,6 +74,14 @@ class Skills extends React.Component {
     return (
       <section>
         <h2>Skills</h2>
+
+        <article className={styles.article}>
+          <div className={styles.containerRow}>
+            <h3>Resume: &nbsp;</h3>
+            <a href={resume} className={styles.link} target="_blank" rel="noopener noreferrer">Download</a>
+          </div>
+        </article>
+
         <article className={styles.article}>
           <h3>Frontend</h3>
           {this.props.hr}
@@ -94,10 +104,12 @@ class Skills extends React.Component {
             <Skill skill={this.skills.npm} />
           </div>
         </article>
+
         <Anchor name={"github-overview"} />
         <article className={styles.article}>
           <GitAccountSummary username={"jodyanna"} hr={this.props.hr} />
         </article>
+
       </section>
     );
   }
