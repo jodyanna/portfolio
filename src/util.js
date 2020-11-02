@@ -23,7 +23,7 @@ export const getBrowserHeight = () => {
 
 export const ajaxRequest = (url) => {
   return new Promise((resolve) => {
-    const token = "token dfdb26a22b2f148ab53a863f8dad185d792afdd2";
+    const token = "token 1bddec40b2b0f03dc8950511d4a0e5dc7bd0c129";
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) resolve(JSON.parse(this.responseText))
