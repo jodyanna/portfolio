@@ -1,11 +1,11 @@
 import React from 'react';
 
-import {getBrowserHeight} from "../util";
-import dropdownArrow from '../img/icons/dropdown-arrow.svg';
-import styles from '../styles/modules/Navigation.module.css';
+import {getBrowserHeight} from "../../util";
+import dropdownArrow from '../../img/icons/dropdown-arrow.svg';
+import styles from '../../styles/modules/Navigation.module.css';
 
 
-class Navigation extends React.Component {
+export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -125,6 +125,3 @@ function DropdownMenu(props) {
     </ul>
   )
 }
-
-
-export default Navigation;

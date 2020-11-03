@@ -1,25 +1,25 @@
 import React from 'react';
 
-import GitAccountSummary from './GitAccountSummary';
-import Anchor from "../util";
+import GitAccountSummary from '../GitAccountSummary';
+import Anchor from "../../util";
 
-import jsIcon from '../img/icons/javascript.svg';
-import htmlIcon from '../img/icons/html5.svg';
-import cssIcon from '../img/icons/css.svg';
-import pythonIcon from '../img/icons/python.svg';
-import phpIcon from '../img/icons/php.svg';
-import reactIcon from '../img/icons/react.svg';
-import gitIcon from '../img/icons/git.png';
-import scIcon from '../img/icons/styled-components.png';
-import nodeIcon from '../img/icons/nodejs.svg';
-import npmIcon from '../img/icons/npm.png';
-import mysqlIcon from '../img/icons/mysql.svg';
+import jsIcon from '../../img/icons/javascript.svg';
+import htmlIcon from '../../img/icons/html5.svg';
+import cssIcon from '../../img/icons/css.svg';
+import pythonIcon from '../../img/icons/python.svg';
+import phpIcon from '../../img/icons/php.svg';
+import reactIcon from '../../img/icons/react.svg';
+import gitIcon from '../../img/icons/git.png';
+import scIcon from '../../img/icons/styled-components.png';
+import nodeIcon from '../../img/icons/nodejs.svg';
+import npmIcon from '../../img/icons/npm.png';
+import mysqlIcon from '../../img/icons/mysql.svg';
 
-import styles from "../styles/modules/Skills.module.css";
-import resume from "../img/jpdanna-resume.pdf";
+import styles from "../../styles/modules/Skills.module.css";
+import resume from "../../img/jpdanna-resume.pdf";
 
 
-class Skills extends React.Component {
+export default class Skills extends React.Component {
   constructor(props) {
     super(props);
     this.skills = {
@@ -124,6 +124,3 @@ function Skill(props) {
     </div>
   );
 }
-
-
-export default Skills;

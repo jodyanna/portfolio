@@ -1,9 +1,9 @@
 import React from 'react';
-import Navigation from "./Navigation";
-import styles from '../styles/modules/Header.module.css';
+import Navigation from "../Navigation";
+import styles from '../../styles/modules/Header.module.css';
 
 
-function Header(props) {
+export default function Header(props) {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -13,5 +13,3 @@ function Header(props) {
     </header>
   );
 }
-
-export default Header;

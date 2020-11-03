@@ -1,20 +1,20 @@
 import React from 'react';
 
-import Anchor from "../util";
+import Anchor from "../../util";
 
-import cssIcon from '../img/icons/css.svg';
-import htmlIcon from '../img/icons/html5.svg';
-import jsIcon from '../img/icons/javascript.svg';
-import mysqlIcon from '../img/icons/mysql.svg';
-import nodeIcon from '../img/icons/nodejs.svg';
-import pythonIcon from '../img/icons/python.svg';
-import reactIcon from '../img/icons/react.svg';
-import scIcon from '../img/icons/styled-components.png';
+import cssIcon from '../../img/icons/css.svg';
+import htmlIcon from '../../img/icons/html5.svg';
+import jsIcon from '../../img/icons/javascript.svg';
+import mysqlIcon from '../../img/icons/mysql.svg';
+import nodeIcon from '../../img/icons/nodejs.svg';
+import pythonIcon from '../../img/icons/python.svg';
+import reactIcon from '../../img/icons/react.svg';
+import scIcon from '../../img/icons/styled-components.png';
 
-import styles from '../styles/modules/Projects.module.css';
+import styles from '../../styles/modules/Projects.module.css';
 
 
-class Projects extends React.Component {
+export default class Projects extends React.Component {
   constructor(props) {
     super(props);
     this.projectOne = {
@@ -135,6 +135,3 @@ function TechFig(props) {
     </figure>
   );
 }
-
-
-export default Projects;

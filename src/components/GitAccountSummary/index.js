@@ -1,10 +1,10 @@
 import React from "react";
 import GitRepoPercentBar from "./GitRepoPercentBar";
-import {ajaxRequest} from "../util";
-import styles from "../styles/modules/GitAccount.module.css";
+import {ajaxRequest} from "../../util";
+import styles from "../../styles/modules/GitAccount.module.css";
 
 
-class GitAccountSummary extends React.Component {
+export default class GitAccountSummary extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -48,5 +48,3 @@ class GitAccountSummary extends React.Component {
     )
   }
 }
-
-export default GitAccountSummary;

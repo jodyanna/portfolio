@@ -1,11 +1,11 @@
 import React from 'react';
 
-import styles from '../styles/modules/Education.module.css';
+import styles from '../../styles/modules/Education.module.css';
 
-import ncc from '../img/ncc.png';
+import ncc from '../../img/ncc.png';
 
 
-function Education() {
+export default function Education() {
   return (
     <section>
       <article className={styles.article}>
@@ -18,5 +18,3 @@ function Education() {
     </section>
   );
 }
-
-export default Education;

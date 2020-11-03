@@ -1,10 +1,10 @@
 import React from "react";
-import {ajaxRequest, roundDecimal} from "../util";
-import colors from "../colors.json"; // thank you https://github.com/ozh/github-colors
-import styles from "../styles/modules/GitAccount.module.css";
+import {ajaxRequest, roundDecimal} from "../../util";
+import colors from "../../colors.json"; // thank you https://github.com/ozh/github-colors
+import styles from "../../styles/modules/GitAccount.module.css";
 
 
-class GitRepoPercentBar extends React.Component {
+export default class GitRepoPercentBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -95,5 +95,3 @@ function BarPart(props) {
     </div>
   );
 }
-
-export default GitRepoPercentBar;

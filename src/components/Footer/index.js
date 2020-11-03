@@ -1,10 +1,10 @@
 import React from 'react';
-import styles from '../styles/modules/Footer.module.css';
-import githubIcon from "../img/icons/github.svg";
-import gmailIcon from "../img/icons/gmail.svg";
+import styles from '../../styles/modules/Footer.module.css';
+import githubIcon from "../../img/icons/github.svg";
+import gmailIcon from "../../img/icons/gmail.svg";
 
 
-function Footer() {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.attributions}>
@@ -23,5 +23,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;

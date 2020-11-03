@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from './components/Header.js';
+import Header from './components/Header';
 import Intro from './components/Intro.js';
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
