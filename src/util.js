@@ -23,7 +23,7 @@ export const getBrowserHeight = () => {
 
 export const ajaxRequest = (url) => {
   return new Promise((resolve) => {
-    const token = "token 1bddec40b2b0f03dc8950511d4a0e5dc7bd0c129";
+    const token = "token  e4377107a5f5c4071797ff3e3d9d3d7f0fd86dec";
     const xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState === 4 && this.status === 200) resolve(JSON.parse(this.responseText))
@@ -41,6 +41,3 @@ export const roundDecimal = (num, exp) => {
   return Math.round((num + Number.EPSILON) * precision) / precision;
 }
 
-export const lowerFirstChar = (string) => {
-  return string.charAt(0).toLowerCase() + string.slice(1);
-}

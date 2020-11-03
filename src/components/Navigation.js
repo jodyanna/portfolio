@@ -74,21 +74,7 @@ class NavBar extends React.Component{
     this.menuOffset = 160;
   }
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll)
-  }
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
-
-  handleScroll = () => {
-    if (!this.state.isMenuUp) return
-    if (window.pageYOffset < (this.props.browerHeight - this.menuOffset)) {
-      this.setState({isMenuVisible: this.state.isMenuVisible, isMenuUP: true});
-    }
-    else this.setState({isMenuVisible: this.state.isMenuVisible, isMenuUp: false});
-  }
 
   handleClick = () => {
     this.setState({isMenuVisible: !this.state.isMenuVisible});
@@ -131,13 +117,8 @@ function DropdownMenu(props) {
     else return styles.dropdownNotVisible
   }
 
-  const determinePosition = () => {
-    if (props.isMenuUp) return {top: "-150px"}
-    else return {top: "50px"}
-  }
-
   return (
-    <ul className={determineStyleClass()} style={determinePosition()}>
+    <ul className={determineStyleClass()}>
       <li className={styles.dropdownItem}><a href={"#chatter-bot"} onClick={props.onClick}>Chatter-bot</a></li>
       <li className={styles.dropdownItem}><a href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</a></li>
       <li className={styles.dropdownItem}><a href={"#portfolio"} onClick={props.onClick}>My Portfolio</a></li>
