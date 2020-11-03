@@ -12,8 +12,6 @@
 }
 
 .attributions {
-    width: fit-content;
-
     font-size: 0.5em;
 }
 
@@ -24,8 +22,6 @@
 
     align-items: center;
     justify-content: center;
-
-    width: fit-content;
 
     margin-left: auto;
 

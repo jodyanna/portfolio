@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../../styles/modules/Education.module.css';
+import styles from './Education.module.css';
 
 import ncc from '../../img/ncc.png';
 
