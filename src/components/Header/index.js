@@ -1,15 +1,27 @@
 import React from 'react';
 import Navigation from "../Navigation";
-import styles from '../../styles/modules/Header.module.css';
+import styled from "styled-components";
 
+const Container = styled.header`
+  position: sticky;
+  top: 0;
+
+  width: 95%;
+  height: 70px;
+  
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+
+  background-color: #121212;
+`;
 
 export default function Header(props) {
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        <Navigation hr={props.hr} />
-      </div>
+    <Container>
+      <Navigation hr={props.hr} />
       {props.hr}
-    </header>
+    </Container>
   );
 }

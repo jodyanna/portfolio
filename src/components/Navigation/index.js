@@ -1,8 +1,20 @@
 import React from 'react';
+import styled from "styled-components";
+import NavBar from "./NavBar";
+import NavMenu from "./NavMenu";
+import NavButton from "./NavButton";
 
-import {getBrowserHeight} from "../../util";
-import dropdownArrow from '../../img/icons/dropdown-arrow.svg';
-import styles from '../../styles/modules/Navigation.module.css';
+const Container = styled.nav`
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  width: 100%;
+  height: 50px;
+
+  background-color: inherit;
+`;
 
 
 export default class Navigation extends React.Component {
@@ -11,7 +23,6 @@ export default class Navigation extends React.Component {
     this.state = {
       isVisible: false,
     };
-    this.browserHeight = getBrowserHeight();
   }
 
   handleClick = () => {
@@ -20,108 +31,11 @@ export default class Navigation extends React.Component {
 
   render() {
     return (
-      <nav className={styles.container}>
+      <Container>
         <NavButton label={"NAV"} onClick={this.handleClick} />
         <NavMenu isVisible={this.state.isVisible} onClick={this.handleClick} hr={this.props.hr} />
-        <NavBar browerHeight={this.browserHeight} />
-      </nav>
+        <NavBar />
+      </Container>
     );
   }
-}
-
-
-function NavButton(props) {
-  return (
-    <button className={styles.navButton} onClick={props.onClick}>
-      [ <span className={styles.innerButton}>{props.label}</span> ]
-    </button>
-  );
-}
-
-
-function NavMenu(props) {
-  const determineStyleClass = () => {
-    if (props.isVisible) return styles.menuVisible
-    else return styles.menuNotVisible
-  }
-
-  return (
-    <ul className={determineStyleClass()}>
-      <li className={styles.navItemSub}>
-        <NavButton label={"X"} onClick={props.onClick} />
-      </li>
-      <li className={styles.navItem}><a href={"#top"} onClick={props.onClick}>Top</a></li>
-      <li className={styles.navItemSub}><a href={"#"} onClick={props.onClick}>Resume</a></li>
-      {props.hr}
-      <li className={styles.navItem}><a href={"#skills"} onClick={props.onClick}>Skills</a></li>
-      {props.hr}
-      <li className={styles.navItem}><a href={"#projects"} onClick={props.onClick}>Projects</a></li>
-      <li className={styles.navItemSub}><a href={"#chatter-bot"} onClick={props.onClick}>Chatter-bot</a></li>
-      <li className={styles.navItemSub}><a href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</a></li>
-      <li className={styles.navItemSub}><a href={"#portfolio"} onClick={props.onClick}>My Portfolio</a></li>
-    </ul>
-  );
-}
-
-
-class NavBar extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMenuVisible: false,
-      isMenuUp: true,
-    }
-    this.menuOffset = 160;
-  }
-
-
-
-  handleClick = () => {
-    this.setState({isMenuVisible: !this.state.isMenuVisible});
-
-  }
-
-  render() {
-    return (
-      <div className={styles.navBarContainer}>
-        <ul className={styles.navBar}>
-          <li className={styles.navBarItem}><a href={"#top"}>Top</a></li>
-          <li className={styles.navBarItem}><a href={"#skills"}>Skills</a></li>
-          <li className={styles.navBarItem}>
-            <a href={"#projects"}>Projects</a>
-            <DropdownButton onClick={this.handleClick} />
-            <DropdownMenu isMenuVisible={this.state.isMenuVisible}
-                          isMenuUp={this.state.isMenuUp}
-                          menuOffset={this.menuOffset}
-                          onClick={this.handleClick}/>
-          </li>
-        </ul>
-      </div>
-    );
-  }
-}
-
-
-function DropdownButton(props) {
-  return (
-    <button className={styles.dropdownButton} onClick={props.onClick}>
-      <img src={dropdownArrow} alt="dropdown-arrow.svg" className={styles.dropdownIcon} />
-    </button>
-  )
-}
-
-
-function DropdownMenu(props) {
-  const determineStyleClass = () => {
-    if (props.isMenuVisible) return styles.dropdownVisible
-    else return styles.dropdownNotVisible
-  }
-
-  return (
-    <ul className={determineStyleClass()}>
-      <li className={styles.dropdownItem}><a href={"#chatter-bot"} onClick={props.onClick}>Chatter-bot</a></li>
-      <li className={styles.dropdownItem}><a href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</a></li>
-      <li className={styles.dropdownItem}><a href={"#portfolio"} onClick={props.onClick}>My Portfolio</a></li>
-    </ul>
-  )
 }

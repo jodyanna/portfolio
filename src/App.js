@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './components/Header';
-import Intro from './components/Intro.js';
+import Intro from './components/Intro';
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
@@ -29,15 +29,12 @@ class App extends React.Component {
         <Anchor name={"top"} />
         <ThemeButton onClick={this.handleClick} />
         <Intro />
-        <Header hr={<HR theme={this.state.isLight} />}/>
         <div id={"content"}>
-          <div className={"emptySpace"} />
+          <Header hr={<HR theme={this.state.isLight} />}/>
           <Anchor name={"skills"} />
           <Skills hr={<HR theme={this.state.isLight} />} />
-          <div className={"emptySpace"} />
           <Anchor name={"projects"} />
           <Projects hr={<HR theme={this.state.isLight} />} />
-          <div className={"emptySpace"} />
         </div>
         <HR theme={this.state.isLight} />
         <Footer />

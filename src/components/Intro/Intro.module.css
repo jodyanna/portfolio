@@ -1,6 +1,9 @@
 
 .section {
+    height: 100vh;
+
     margin-top: 0;
+
     justify-content: space-evenly;
 }
 
