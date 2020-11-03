@@ -34,10 +34,3 @@ export const ajaxRequest = (url) => {
     setTimeout(() => {}, 1000)
   })
 }
-
-export const roundDecimal = (num, exp) => {
-  const precision = 10**exp;
-
-  return Math.round((num + Number.EPSILON) * precision) / precision;
-}
-

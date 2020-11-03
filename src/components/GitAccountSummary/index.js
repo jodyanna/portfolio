@@ -1,7 +1,6 @@
 import React from "react";
 import GitRepoPercentBar from "./GitRepoPercentBar";
-import {ajaxRequest} from "../../util";
-import styles from "../../styles/modules/GitAccount.module.css";
+import styles from "./GitAccount.module.css";
 
 
 export default class GitAccountSummary extends React.Component {
@@ -13,13 +12,16 @@ export default class GitAccountSummary extends React.Component {
   }
 
   componentDidMount() {
-    const promise = this.githubAPIRequest(this.props.username);
-    promise.then(data => data.map(obj => obj.name))
-      .then(data => this.setState({isLoading: false, repos: data}));
-  }
-
-  githubAPIRequest(username) {
-    return ajaxRequest(`https://api.github.com/users/${username}/repos`)
+    fetch(`https://api.github.com/users/${this.props.username}/repos`, {
+      method: "GET",
+      headers: {
+        "authorization": "token  e4377107a5f5c4071797ff3e3d9d3d7f0fd86dec"
+      },
+      }
+    ).then(res => res.json())
+      .then(data => data.map(obj => obj.name))
+      .then(data => this.setState({isLoading: false, repos: data}))
+      .catch(err => console.log(err))
   }
 
   render() {

@@ -1,7 +1,8 @@
 import React from "react";
-import {ajaxRequest, roundDecimal} from "../../util";
+import BarPart from "./BarPart";
+import {ajaxRequest} from "../../util";
 import colors from "../../colors.json"; // thank you https://github.com/ozh/github-colors
-import styles from "../../styles/modules/GitAccount.module.css";
+import styles from "./GitAccount.module.css";
 
 
 export default class GitRepoPercentBar extends React.Component {
@@ -41,7 +42,7 @@ export default class GitRepoPercentBar extends React.Component {
     const langScoreTotal = this.calcGitLangScore(data);
     for (const prop in data) {
       const ratio = data[prop] / langScoreTotal;
-      const width = (Math.floor(roundDecimal(ratio, 2) * 100));
+      const width = (Math.floor(ratio.toFixed(2) * 100));
       if (width > 0) temp[prop] = width;
     }
     return temp
@@ -83,15 +84,4 @@ export default class GitRepoPercentBar extends React.Component {
       </div>
     );
   }
-}
-
-function BarPart(props) {
-  return (
-    <div style={{width: props.width}} className={styles.partContainer}>
-      <div style={{backgroundColor: props.backgroundColor}} className={styles.barPart}>
-        {props.width}
-      </div>
-      <span className={styles.label}>{props.label}</span>
-    </div>
-  );
 }
