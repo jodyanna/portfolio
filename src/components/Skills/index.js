@@ -15,7 +15,7 @@ import nodeIcon from '../../img/icons/nodejs.svg';
 import npmIcon from '../../img/icons/npm.png';
 import mysqlIcon from '../../img/icons/mysql.svg';
 
-import styles from "../../styles/modules/Skills.module.css";
+import styles from "./Skills.module.css";
 import resume from "../../img/jpdanna-resume.pdf";
 
 

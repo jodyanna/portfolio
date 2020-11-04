@@ -14,7 +14,7 @@ const Container = styled.header`
 
   margin: 0;
 
-  background-color: #121212;
+  background-color: inherit;
 `;
 
 export default function Header(props) {

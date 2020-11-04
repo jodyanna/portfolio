@@ -6,7 +6,8 @@ const Menu = styled.div`
   visibility: ${props => props.isVisible ? 'visible' : 'hidden'};
 
   position: absolute;
-  top: 70px;
+  z-index: 2;
+  top: 50px;
 
   display: flex;
   flex-direction: column;
@@ -15,14 +16,13 @@ const Menu = styled.div`
   justify-content: center;
 
   margin: 0;
-  padding: 1em;
+  padding: 0 1em;
 
   background-color: inherit;
   opacity: 90%;
 `;
 
 const ListItem = styled.a`
-
   float: left;
   
   margin: 0.4em 0;

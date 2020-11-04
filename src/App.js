@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from "styled-components";
 
 import Header from './components/Header';
 import Intro from './components/Intro';
@@ -11,7 +12,12 @@ import "./styles/App.css";
 import resume from "./img/jpdanna-resume.pdf";
 
 
-class App extends React.Component {
+
+
+
+
+
+export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -56,15 +62,3 @@ function ThemeButton(props) {
 function HR(props) {
   return <hr style={{backgroundColor: props.theme ? "#121212" : "#f5f5f5"}} />
 }
-
-function Resume() {
-  return (
-    <object data={resume} type="application/pdf" width="100%" height="100%">
-      <p>Cannot view document - <a href={resume} target="_blank" rel="noopener noreferrer">Download PDF</a></p>
-    </object>
-  )
-}
-
-
-
-export default App;

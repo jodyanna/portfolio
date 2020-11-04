@@ -3,18 +3,20 @@ import styled from "styled-components";
 import NavButton from "./NavButton";
 
 const Menu = styled.ul`
-  position: absolute;
-  top: 50px;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
   visibility: ${props => props.isVisible ? 'visible' : 'hidden'};
 
   display: flex;
   flex-direction: column;
 
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
   width: 100%;
-  height: 100%;
+  height: 95%;
 
   margin: 0;
   padding: 0;

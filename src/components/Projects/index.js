@@ -11,7 +11,7 @@ import pythonIcon from '../../img/icons/python.svg';
 import reactIcon from '../../img/icons/react.svg';
 import scIcon from '../../img/icons/styled-components.png';
 
-import styles from '../../styles/modules/Projects.module.css';
+import styles from './Projects.module.css';
 
 
 export default class Projects extends React.Component {
@@ -19,7 +19,7 @@ export default class Projects extends React.Component {
     super(props);
     this.projectOne = {
       name: "Chatter-bot",
-      id: "Chatter-bot",
+      id: "chatter-bot",
       type: "Web Application",
       techUsed: ["React", "styled-components", "JavaScript", "Express/Node.js", "MySQL"],
       overview: "Create posts, chat rooms, and user accounts for topical discussion.",

@@ -4,12 +4,12 @@ import styles from "./Intro.module.css";
 
 export default function Intro() {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} style={{height: (window.innerHeight - 70) + "px"}}>
       <div className={styles.textContainer}>
         <div className={styles.greeting}>Hello</div>
         <div className={styles.nutshell}>
           <span>I am a web developer</span><br/>
-          <span>from the Chicago land area.</span>
+          <span>from the Chicagoland area.</span>
         </div>
       </div>
       <div className={styles.container}>
