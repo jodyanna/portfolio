@@ -3,7 +3,7 @@ import styled from "styled-components";
 import dropdownArrow from "../../img/icons/dropdown-arrow.svg";
 
 
-const Button = styled.button`
+const Button = styled.a`
   display: block;
   position: relative;
   top: 3px;
@@ -23,7 +23,7 @@ const Icon = styled.img`
 
 export default function DropdownButton(props) {
   return (
-    <Button onClick={props.onClick}>
+    <Button onClick={props.onClick} href={"#projects"} >
       <Icon src={dropdownArrow} alt="dropdown-arrow.svg" />
     </Button>
   )
