@@ -18,6 +18,7 @@ export default class GitRepoPercentBar extends React.Component {
     Promise.all(promises).then(data => this.calcGitRepoLangUsage(data))
       .then(data => this.determineLangUsagePercents(data))
       .then(data => this.setState({isLoading: false, gitData: this.createStateObject(data)}))
+      .catch(err => console.log(err))
   }
 
   githubAPIRequest(repo) {

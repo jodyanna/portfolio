@@ -15,7 +15,7 @@ export default class GitAccountSummary extends React.Component {
     fetch(`https://api.github.com/users/${this.props.username}/repos`, {
       method: "GET",
       headers: {
-        "authorization": "token  e4377107a5f5c4071797ff3e3d9d3d7f0fd86dec"
+        "authorization": process.env.REACT_APP_GITHUB_API_TOKEN
       },
       }
     ).then(res => res.json())
