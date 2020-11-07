@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import styled from "styled-components";
 import DropdownMenu from "./DropdownMenu";
 import DropdownButton from "./DropdownButton";
@@ -42,34 +42,23 @@ const BarItem = styled.li`
 `;
 
 
-export default class NavBar extends React.Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-      isMenuVisible: false,
-      isMenuUp: true,
-    }
-    this.menuOffset = 160;
-  }
+export default function NavBar() {
+  const [ isMenuVisible, setIsMenuVisible ] = useState(false);
 
-  handleClick = () => {
-    this.setState({isMenuVisible: !this.state.isMenuVisible});
-  }
+  const handleClick = () => setIsMenuVisible(!isMenuVisible)
 
-  render() {
-    return (
-      <Bar>
-        <BarItem><a href={"#top"}>Top</a></BarItem>
-        <BarItem><a href={"#skills"}>Skills</a></BarItem>
-        <BarItem>
-          <a href={"#projects"}>Projects</a>
-          <DropdownButton onClick={this.handleClick} />
-          <DropdownMenu isMenuVisible={this.state.isMenuVisible}
-                        isMenuUp={this.state.isMenuUp}
-                        menuOffset={this.menuOffset}
-                        onClick={this.handleClick}/>
-        </BarItem>
-      </Bar>
-    );
-  }
+  return (
+    <Bar>
+      <BarItem><a href={"#top"}>Top</a></BarItem>
+      <BarItem><a href={"#skills"}>Skills</a></BarItem>
+      <BarItem>
+        <a href={"#projects"}>Projects</a>
+        <DropdownButton onClick={handleClick} />
+        <DropdownMenu isMenuVisible={isMenuVisible}
+                      menuOffset={160}
+                      onClick={handleClick}
+        />
+      </BarItem>
+    </Bar>
+  );
 }
