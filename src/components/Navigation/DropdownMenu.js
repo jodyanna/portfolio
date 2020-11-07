@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
 
@@ -18,7 +18,7 @@ const Menu = styled.div`
   margin: 0;
   padding: 0 1em;
 
-  background-color: inherit;
+  background-color: ${props => props.theme.background};
   opacity: 90%;
 `;
 
@@ -33,8 +33,10 @@ const ListItem = styled.a`
 `;
 
 export default function DropdownMenu(props) {
+  const theme = useContext(Theme)
+
   return (
-    <Menu isVisible={props.isMenuVisible}>
+    <Menu isVisible={props.isMenuVisible} >
       <ListItem href={"#chatter-bot"} onClick={props.onClick}>Chatter-bot</ListItem>
       <ListItem href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</ListItem>
       <ListItem href={"#portfolio"} onClick={props.onClick}>My Portfolio</ListItem>

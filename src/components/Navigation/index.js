@@ -12,8 +12,6 @@ const Container = styled.nav`
 
   width: 100%;
   height: 50px;
-
-  background-color: inherit;
 `;
 
 
