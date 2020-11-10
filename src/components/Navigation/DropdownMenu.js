@@ -33,7 +33,6 @@ const ListItem = styled.a`
 `;
 
 export default function DropdownMenu(props) {
-  const theme = useContext(Theme)
 
   return (
     <Menu isVisible={props.isMenuVisible} >
