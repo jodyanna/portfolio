@@ -13,6 +13,7 @@ import npmIcon from '../../img/icons/npm.png';
 import mysqlIcon from '../../img/icons/mysql.svg';
 
 import styles from "./Skills.module.css";
+import Anchor from "../../util";
 
 
 export default class Skills extends React.Component {
@@ -69,6 +70,7 @@ export default class Skills extends React.Component {
   render() {
     return (
       <section>
+        <Anchor name={"skills"} />
         <h2>Skills</h2>
         <article className={styles.article}>
           <h3>Frontend</h3>

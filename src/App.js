@@ -6,10 +6,10 @@ import Intro from './components/Intro';
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import About from "./components/About";
 import Anchor from "./util";
 
 import "./styles/App.css";
-import resume from "./img/jpdanna-resume.pdf";
 
 const Container = styled.div`
   display: flex;
@@ -47,9 +47,8 @@ export default function App() {
         <Intro />
         <div id={"content"}>
           <Header hr={<HR theme={isLight} />}/>
-          <Anchor name={"skills"} />
+          <About />
           <Skills hr={<HR theme={isLight} />} />
-          <Anchor name={"projects"} />
           <Projects hr={<HR theme={isLight} />} />
         </div>
         <HR theme={isLight} />

@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import Resume from "../Resume";
+import Anchor from "../../util";
 
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   flex-direction: column;
 
@@ -19,7 +21,9 @@ export default function About() {
 
   return (
     <Container>
-
+      <Anchor name={"about"} />
+      <h2>About Me</h2>
+      <Resume />
     </Container>
   );
 }

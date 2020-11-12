@@ -64,6 +64,7 @@ export default class Projects extends React.Component {
   render() {
     return (
       <section>
+        <Anchor name={"projects"} />
         <h2>Projects</h2>
         <Anchor name={this.projectOne.id} />
         <Project project={this.projectOne} hr={this.props.hr} />
