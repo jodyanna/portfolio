@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Anchor from "../../util";
+import Anchor from "../Anchor";
 
 import cssIcon from '../../img/icons/css.svg';
 import htmlIcon from '../../img/icons/html5.svg';

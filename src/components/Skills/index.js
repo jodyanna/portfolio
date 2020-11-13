@@ -13,7 +13,7 @@ import npmIcon from '../../img/icons/npm.png';
 import mysqlIcon from '../../img/icons/mysql.svg';
 
 import styles from "./Skills.module.css";
-import Anchor from "../../util";
+import Anchor from "../Anchor";
 
 
 export default class Skills extends React.Component {

@@ -20,7 +20,9 @@ const Container = styled.header`
 export default function Header(props) {
   return (
     <Container>
-      <Navigation hr={props.hr} />
+      <Navigation hr={props.hr}
+                  isButtonVisible={props.isButtonVisible}
+      />
       {props.hr}
     </Container>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import DropdownMenu from "./DropdownMenu";
 import DropdownButton from "./DropdownButton";
@@ -42,18 +42,25 @@ const BarItem = styled.li`
 `;
 
 
-export default function NavBar() {
+export default function NavBar(props) {
   const [ isMenuVisible, setIsMenuVisible ] = useState(false);
 
   const handleClick = () => setIsMenuVisible(!isMenuVisible)
 
+  useEffect(() => {
+    if(!props.isButtonVisible) setIsMenuVisible(false);
+  }, [props.isButtonVisible])
+
   return (
     <Bar>
       <BarItem><a href={"#top"}>Top</a></BarItem>
+      <BarItem><a href={"#about"}>About</a></BarItem>
       <BarItem><a href={"#skills"}>Skills</a></BarItem>
       <BarItem>
         <a href={"#projects"}>Projects</a>
-        <DropdownButton onClick={handleClick} />
+        <DropdownButton onClick={handleClick}
+                        isVisible={props.isButtonVisible}
+        />
         <DropdownMenu isMenuVisible={isMenuVisible}
                       menuOffset={160}
                       onClick={handleClick}

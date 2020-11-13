@@ -7,6 +7,8 @@ const Button = styled.a`
   display: block;
   position: relative;
   top: 3px;
+  
+  visibility: ${props => props.isVisible ? 'visible' : 'hidden'};
 
   margin-left: 1em;
 
@@ -23,7 +25,7 @@ const Icon = styled.img`
 
 export default function DropdownButton(props) {
   return (
-    <Button onClick={props.onClick} href={"#projects"} >
+    <Button onClick={props.onClick} isVisible={props.isVisible}>
       <Icon src={dropdownArrow} alt="dropdown-arrow.svg" />
     </Button>
   )

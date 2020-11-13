@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Resume from "../Resume";
-import Anchor from "../../util";
+import Anchor from "../Anchor";
 
 
 const Container = styled.section`
