@@ -55,7 +55,9 @@ export default function NavMenu(props) {
         <NavButton label={"X"} onClick={props.onClick} />
       </ListItemSub>
       <ListItem><a href={"#top"} onClick={props.onClick}>Top</a></ListItem>
-      <ListItemSub><a href={"#"} onClick={props.onClick}>Resume</a></ListItemSub>
+      {props.hr}
+      <ListItem><a href={"#about"} onClick={props.onClick}>About</a></ListItem>
+      <ListItemSub><a href={"#resume"} onClick={props.onClick}>Resume</a></ListItemSub>
       {props.hr}
       <ListItem><a href={"#skills"} onClick={props.onClick}>Skills</a></ListItem>
       {props.hr}

@@ -12,5 +12,5 @@ const Span = styled.span`
 `;
 
 export default function Anchor(props) {
-  return <Span id={props.name} className={"anchor"} />
+  return <Span id={props.name} />
 }

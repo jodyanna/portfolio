@@ -23,6 +23,7 @@ const Link = styled.a`
 export default function Resume() {
   return (
     <Container>
+
       <h3>Resume: &nbsp;</h3>
       <Link href={resume} target="_blank" rel="noopener noreferrer">Download PDF</Link>
     </Container>

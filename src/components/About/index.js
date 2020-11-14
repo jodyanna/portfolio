@@ -23,6 +23,7 @@ export default function About() {
     <Container>
       <Anchor name={"about"} />
       <h2>About Me</h2>
+      <Anchor name={"resume"} />
       <Resume />
     </Container>
   );
