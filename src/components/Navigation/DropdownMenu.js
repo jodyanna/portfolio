@@ -18,7 +18,7 @@ const Menu = styled.div`
   justify-content: center;
 
   margin: 0;
-  padding: 0 1em;
+  padding: 0.5em;
   
   width: 200px;
 

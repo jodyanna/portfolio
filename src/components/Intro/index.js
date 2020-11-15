@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./Intro.module.css";
-import {GreetingText, NameText, NutshellText, TaglineText } from "./style";
+import { GreetingText, NameText, NutshellText, TaglineText } from "./style";
 
 
 export default function Intro() {

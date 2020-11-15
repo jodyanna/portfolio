@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
 import NavButton from "./NavButton";
+import Line from "../Line";
 import ThemeContext from "../../contexts/ThemeContext";
 import { themes } from "../../styles/ThemeColors";
 
@@ -59,12 +60,12 @@ export default function NavMenu(props) {
         <NavButton label={"X"} onClick={props.onClick} />
       </ListItemSub>
       <ListItem><a href={"#top"} onClick={props.onClick}>Top</a></ListItem>
-      {props.hr}
+      <Line />
       <ListItem><a href={"#about"} onClick={props.onClick}>About</a></ListItem>
       <ListItemSub><a href={"#resume"} onClick={props.onClick}>Resume</a></ListItemSub>
-      {props.hr}
+      <Line />
       <ListItem><a href={"#skills"} onClick={props.onClick}>Skills</a></ListItem>
-      {props.hr}
+      <Line />
       <ListItem><a href={"#projects"} onClick={props.onClick}>Projects</a></ListItem>
       <ListItemSub><a href={"#chatter-bot"} onClick={props.onClick}>Chatter-bot</a></ListItemSub>
       <ListItemSub><a href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</a></ListItemSub>
