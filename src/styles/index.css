@@ -27,6 +27,8 @@ section, article {
 
 section {
   width: 100%;
+
+  margin-bottom: 6em;
 }
 
 hr {

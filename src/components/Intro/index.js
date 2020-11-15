@@ -5,7 +5,7 @@ import {GreetingText, NameText, NutshellText, TaglineText } from "./style";
 
 export default function Intro() {
   return (
-    <section className={styles.section} style={{height: (window.innerHeight - 70) + "px"}}>
+    <div className={styles.section} style={{height: (window.innerHeight - 70) + "px"}}>
       <div className={styles.textContainer}>
         <GreetingText>Hello</GreetingText>
         <NutshellText>
@@ -20,6 +20,6 @@ export default function Intro() {
         <TaglineText>My name is,</TaglineText>
         <NameText>Joseph D'Anna</NameText>
       </div>
-    </section>
+    </div>
   );
 }
