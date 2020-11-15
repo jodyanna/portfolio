@@ -7,13 +7,6 @@
     justify-content: space-evenly;
 }
 
-.h1 {
-    font-size: 2.2em;
-    margin: 0.3em 0;
-    text-align: center;
-    width: 100%;
-}
-
 .h2 {
     font-family: monospace;
     width: 80%;
@@ -42,18 +35,6 @@
     padding: 1em;
 }
 
-.greeting {
-    font-size: 5em;
-    text-align: center;
-}
-.nutshell {
-    font-size: 1.3em;
-    text-align: center;
-}
-.tagline {
-    font-size: 1.3em;
-    text-align: center;
-}
 
 .circleContainer {
     background-repeat: no-repeat;

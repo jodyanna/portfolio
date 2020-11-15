@@ -18,10 +18,6 @@ body {
   padding: 0;
 }
 
-#content {
-
-}
-
 section, article {
   display: flex;
   display: -webkit-flex;
