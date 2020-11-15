@@ -12,6 +12,7 @@ import reactIcon from '../../img/icons/react.svg';
 import scIcon from '../../img/icons/styled-components.png';
 
 import styles from './Projects.module.css';
+import Line from "../Line";
 
 
 export default class Projects extends React.Component {
@@ -115,7 +116,7 @@ class Project extends React.Component {
             <a href={this.props.project.gitLink} className={styles.link}>Code</a>
           </div>
         </div>
-        {this.props.hr}
+        <Line />
         <div className={styles.techs}>
           {renderTechList()}
         </div>

@@ -1,6 +1,9 @@
-import React from 'react';
-import Navigation from "../Navigation";
+import React, { useContext } from 'react';
 import styled from "styled-components";
+import Navigation from "../Navigation";
+import Line from "../Line";
+import ThemeContext from "../../contexts/ThemeContext";
+import { themes } from "../../styles/ThemeColors";
 
 const Container = styled.header`
   position: sticky;
@@ -13,17 +16,19 @@ const Container = styled.header`
   justify-content: center;
 
   margin: 0;
-
-  background-color: inherit;
+  
+  background-color: ${props => props.theme.background};
 `;
 
 export default function Header(props) {
+  const theme = useContext(ThemeContext)[0];
+
   return (
-    <Container>
+    <Container theme={themes[theme]}>
       <Navigation hr={props.hr}
                   isButtonVisible={props.isButtonVisible}
       />
-      {props.hr}
+      <Line />
     </Container>
   );
 }

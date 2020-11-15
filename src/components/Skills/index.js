@@ -14,6 +14,7 @@ import mysqlIcon from '../../img/icons/mysql.svg';
 
 import styles from "./Skills.module.css";
 import Anchor from "../Anchor";
+import Line from "../Line";
 
 
 export default class Skills extends React.Component {
@@ -74,7 +75,7 @@ export default class Skills extends React.Component {
         <h2>Skills</h2>
         <article className={styles.article}>
           <h3>Frontend</h3>
-          {this.props.hr}
+          <Line />
           <div className={styles.container}>
             <Skill skill={this.skills.javaScript} />
             <Skill skill={this.skills.html} />
@@ -82,13 +83,13 @@ export default class Skills extends React.Component {
             <Skill skill={this.skills.react} />
           </div>
           <h3>Backend/Database</h3>
-          {this.props.hr}
+          <Line />
           <div className={styles.container}>
             <Skill skill={this.skills.expressNode} />
             <Skill skill={this.skills.mysql} />
           </div>
           <h3>Tools</h3>
-          {this.props.hr}
+          <Line />
           <div className={styles.container}>
             <Skill skill={this.skills.git} />
             <Skill skill={this.skills.npm} />

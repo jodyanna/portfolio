@@ -14,6 +14,10 @@ const Button = styled.a`
 
   background-color: transparent;
   border: none;
+  
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Icon = styled.img`

@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
 import NavButton from "./NavButton";
+import ThemeContext from "../../contexts/ThemeContext";
+import { themes } from "../../styles/ThemeColors";
 
 const Menu = styled.ul`
   position: fixed;
@@ -21,7 +23,7 @@ const Menu = styled.ul`
   margin: 0;
   padding: 0;
 
-  background-color: #121212;
+  background-color: ${props => props.theme.background};
   opacity: 90%;
 `;
 
@@ -49,8 +51,10 @@ const ListItemSub = styled.li`
 `;
 
 export default function NavMenu(props) {
+  const theme = useContext(ThemeContext)[0];
+
   return (
-    <Menu isVisible={props.isVisible}>
+    <Menu isVisible={props.isVisible} theme={themes[theme]}>
       <ListItemSub>
         <NavButton label={"X"} onClick={props.onClick} />
       </ListItemSub>

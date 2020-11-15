@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect, useContext} from "react";
 import styled from "styled-components";
 import DropdownMenu from "./DropdownMenu";
 import DropdownButton from "./DropdownButton";
+import ThemeContext from "../../contexts/ThemeContext";
+import { themes } from "../../styles/ThemeColors";
 
 
 const Bar = styled.ul`
@@ -15,7 +17,7 @@ const Bar = styled.ul`
   margin: 0;
   padding: 0;
   
-  background-color: inherit;
+  background-color: ${props => props.theme.background};
   
   @media screen and (max-width: 640px) {
     display: none;
@@ -37,22 +39,21 @@ const BarItem = styled.li`
   margin: 0.5em 1em 0.2em 1em;
 
   list-style: none;
-  
-  background-color: inherit;
 `;
 
 
 export default function NavBar(props) {
   const [ isMenuVisible, setIsMenuVisible ] = useState(false);
-
   const handleClick = () => setIsMenuVisible(!isMenuVisible)
+
+  const theme = useContext(ThemeContext)[0];
 
   useEffect(() => {
     if(!props.isButtonVisible) setIsMenuVisible(false);
   }, [props.isButtonVisible])
 
   return (
-    <Bar>
+    <Bar theme={themes[theme]} >
       <BarItem><a href={"#top"}>Top</a></BarItem>
       <BarItem><a href={"#about"}>About</a></BarItem>
       <BarItem><a href={"#skills"}>Skills</a></BarItem>

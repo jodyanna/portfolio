@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import styled from "styled-components";
 
 import Header from './components/Header';
@@ -8,10 +8,12 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Anchor from "./components/Anchor";
+import Line from "./components/Line";
 import ThemeButton from "./components/ThemeToggle";
 
 import "./styles/App.css";
 import ThemeContext from "./contexts/ThemeContext";
+import { themes } from "./styles/ThemeColors";
 
 const Container = styled.div`
   display: flex;
@@ -20,8 +22,16 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  background-color: ${props => props.bg};
-  color: ${props => props.fg};
+  background-color: ${props => props.theme.background};
+  color: ${props => props.theme.foreground};
+`;
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center;
+  width: 100%;
 `;
 
 export default function App() {
@@ -29,7 +39,7 @@ export default function App() {
   const handleClick = () => setIsLight(!isLight);
 
   const [ isButtonVisible, setIsButtonVisible ] = useState(false);
-  const handleScroll = (menuHeight) => {
+  const handleScroll = menuHeight => {
     window.pageYOffset > menuHeight ? setIsButtonVisible(true) : setIsButtonVisible(false);
   }
 
@@ -38,30 +48,23 @@ export default function App() {
     window.addEventListener("scroll", () => handleScroll(dropdownMenuHeight));
   })
 
-  const themeHook = useState("dark")
+  const themeHook = useState("dark");
 
   return (
     <ThemeContext.Provider value={themeHook}>
-      <Container bg={isLight ? "#f5f5f5" : "#121212"} fg={isLight ? "#121212" : "#f5f5f5"}>
+      <Container theme={themes[isLight ? "light" : "dark"]}>
         <Anchor name={"top"} />
-        <ThemeButton onClick={handleClick} />
+        <ThemeButton handleClick={handleClick} />
         <Intro />
-        <div id={"content"}>
-          <Header hr={<HR theme={isLight} />}
-                  isButtonVisible={isButtonVisible}
-          />
+        <Content>
+          <Header isButtonVisible={isButtonVisible} />
           <About />
-          <Skills hr={<HR theme={isLight} />} />
-          <Projects hr={<HR theme={isLight} />} />
-        </div>
-        <HR theme={isLight} />
+          <Skills />
+          <Projects />
+        </Content>
+        <Line />
         <Footer />
       </Container>
     </ThemeContext.Provider>
   );
-}
-
-
-function HR(props) {
-  return <hr style={{backgroundColor: props.theme ? "#121212" : "#f5f5f5"}} />
 }

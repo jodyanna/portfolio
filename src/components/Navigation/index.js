@@ -31,7 +31,10 @@ export default class Navigation extends React.Component {
     return (
       <Container>
         <NavButton label={"NAV"} onClick={this.handleClick} />
-        <NavMenu isVisible={this.state.isVisible} onClick={this.handleClick} hr={this.props.hr} />
+        <NavMenu isVisible={this.state.isVisible}
+                 onClick={this.handleClick}
+                 hr={this.props.hr}
+        />
         <NavBar isButtonVisible={this.props.isButtonVisible} />
       </Container>
     );
