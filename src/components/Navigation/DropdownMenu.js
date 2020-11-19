@@ -44,6 +44,7 @@ export default function DropdownMenu(props) {
     <Menu isVisible={props.isMenuVisible} theme={themes[theme]} >
       <ListItem href={"#chatter-bot"} onClick={props.onClick}>Chatter-bot</ListItem>
       <ListItem href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</ListItem>
+      <ListItem href={"#github-summary"} onClick={props.onClick}>GitHub Repo Summary</ListItem>
       <ListItem href={"#portfolio"} onClick={props.onClick}>My Portfolio</ListItem>
     </Menu>
   )

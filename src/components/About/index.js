@@ -37,6 +37,8 @@ export default function About() {
       <Anchor name={"about"} />
       <h2>About Me</h2>
       <Article>
+        <p>I should write something quick and catchy about myself here. Maybe go into my hobbies outside of
+        programming.</p>
         <Anchor name={"resume"} />
         <Resume />
       </Article>

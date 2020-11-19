@@ -69,6 +69,7 @@ export default function NavMenu(props) {
       <ListItem><a href={"#projects"} onClick={props.onClick}>Projects</a></ListItem>
       <ListItemSub><a href={"#chatter-bot"} onClick={props.onClick}>Chatter-bot</a></ListItemSub>
       <ListItemSub><a href={"#spiral-designs"} onClick={props.onClick}>Spiral Designs</a></ListItemSub>
+      <ListItemSub><a href={"#github-summary"} onClick={props.onClick}>GitHub Repo Summary</a></ListItemSub>
       <ListItemSub><a href={"#portfolio"} onClick={props.onClick}>My Portfolio</a></ListItemSub>
     </Menu>
   );

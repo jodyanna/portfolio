@@ -60,6 +60,17 @@ export default class Projects extends React.Component {
       link: "#",
       gitLink: "https://github.com/jodyanna/portfolio_v2",
     }
+    this.projectFour = {
+      name: "GitHub Repo Summary",
+      id: "github-summary",
+      type: "React Component",
+      techUsed: ["React", "JavaScript", "CSS", "HTML"],
+      overview: `Display a brief summary of a GitHub user's public repositories. Total programming language usage
+      displayed as a color coded bar.`,
+      details: [],
+      link: "#",
+      gitLink: "https://github.com/jodyanna/github-repo-summary",
+    }
   }
 
   render() {
@@ -68,11 +79,13 @@ export default class Projects extends React.Component {
         <Anchor name={"projects"} />
         <h2>Projects</h2>
         <Anchor name={this.projectOne.id} />
-        <Project project={this.projectOne} hr={this.props.hr} />
+        <Project project={this.projectOne} />
         <Anchor name={this.projectTwo.id} />
-        <Project project={this.projectTwo} hr={this.props.hr} />
+        <Project project={this.projectTwo} />
+        <Anchor name={this.projectFour.id} />
+        <Project project={this.projectFour} />
         <Anchor name={this.projectThree.id} />
-        <Project project={this.projectThree} hr={this.props.hr} />
+        <Project project={this.projectThree} />
       </section>
     );
   }
@@ -98,9 +111,11 @@ class Project extends React.Component {
       return this.props.project.techUsed.map(tech => <TechFig key={tech} tech={tech} icons={this.icons} />)
     }
 
+    /*
     const renderDetails = () => {
       return this.props.project.details.map((desc, i) => <li key={i} className={styles.li}>{desc}</li>)
     }
+    */
 
     const renderLink = () => {
       return this.props.project.link === "#" ? "" : <a href={this.props.project.link} className={styles.link}>Live Demo</a>
