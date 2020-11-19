@@ -27,7 +27,7 @@ const Article = styled.article`
   width: 95%;
 
   margin: 0 0 4em 0;
-  padding: 0.5em;
+  padding: 0;
 `;
 
 export default function About() {

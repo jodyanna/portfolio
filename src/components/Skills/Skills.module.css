@@ -50,32 +50,9 @@
     margin: 1em 0;
 }
 
-.skillContainer {
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: row;
-
-    align-items: center;
-    justify-content: flex-start;
-
-    width: 132px;
-
-    margin: 0 1em 2em 1em;
-}
-
 .link {
     width: fit-content;
     margin: 0 1em 0 0;
     font-size: 1.2em;
 
 }
-
-.icon {
-    width: 24px;
-    height: 24px;
-    margin: 0.5em;
-
-    border-radius: 50%;
-}
-
-
