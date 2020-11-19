@@ -1,13 +1,8 @@
 import React from "react";
 import styles from "./Projects.module.css";
 import Line from "../Line";
-import TechFig from "../TechFig";
 
 export default function Project(props) {
-  const renderTechList = () => {
-    return props.project.techUsed.map(tech => <TechFig key={tech} tech={tech} />)
-  }
-
   const renderLink = () => {
     return props.project.link === "#" ? "" : <a href={props.project.link} className={styles.link}>Live Demo</a>
   }
@@ -23,9 +18,6 @@ export default function Project(props) {
         </div>
       </div>
       <Line />
-      <div className={styles.techs}>
-        {renderTechList()}
-      </div>
       <div className={styles.overview}>
         {props.project.overview}
       </div>

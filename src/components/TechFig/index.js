@@ -19,7 +19,7 @@ const Container = styled.figure`
   align-items: center;
   justify-content: flex-start;
 
-  margin: 0 1em 0.7em 0;
+  margin: 0 1.5em 0.5em 0;
 `;
 
 const Icon = styled.img`
