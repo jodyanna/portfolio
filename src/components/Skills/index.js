@@ -1,69 +1,23 @@
 import React from 'react';
 
-import jsIcon from '../../img/icons/javascript.svg';
-import htmlIcon from '../../img/icons/html5.svg';
-import cssIcon from '../../img/icons/css.svg';
-import pythonIcon from '../../img/icons/python.svg';
-import phpIcon from '../../img/icons/php.svg';
-import reactIcon from '../../img/icons/react.svg';
-import gitIcon from '../../img/icons/git.png';
-import scIcon from '../../img/icons/styled-components.png';
-import nodeIcon from '../../img/icons/nodejs.svg';
-import npmIcon from '../../img/icons/npm.png';
-import mysqlIcon from '../../img/icons/mysql.svg';
-
 import styles from "./Skills.module.css";
 import Anchor from "../Anchor";
 import Line from "../Line";
-import Skill from "./Skill";
-
+import TechFig from "../TechFig";
 
 export default function Skills() {
   const skills = {
-    javaScript: {
-      displayName: "JavaScript",
-      icon: jsIcon
-    },
-    html: {
-      displayName: "HTML",
-      icon: htmlIcon
-    },
-    css : {
-      displayName: "CSS",
-      icon: cssIcon
-    },
-    python: {
-      displayName: "Python",
-      icon: pythonIcon
-    },
-    php: {
-      displayName: "PHP",
-      icon: phpIcon
-    },
-    react: {
-      displayName: "React",
-      icon: reactIcon
-    },
-    git: {
-      displayName: "git",
-      icon: gitIcon
-    },
-    styledComponents: {
-      displayName: "styled-components",
-      icon: scIcon
-    },
-    expressNode: {
-      displayName: "Express/Node.js",
-      icon: nodeIcon
-    },
-    npm: {
-      displayName: "npm",
-      icon: npmIcon
-    },
-    mysql: {
-      displayName: "MySQL",
-      icon: mysqlIcon
-    }
+    javaScript: "JavaScript",
+    html: "HTML",
+    css : "CSS",
+    python: "Python",
+    php: "PHP",
+    react: "React",
+    git: "git",
+    styledComponents: "styled-components",
+    expressNode: "Express/Node.js",
+    npm: "npm",
+    mysql: "MySQL"
   }
 
   return (
@@ -74,26 +28,25 @@ export default function Skills() {
         <h3>Frontend</h3>
         <Line />
         <div className={styles.container}>
-          <Skill skill={skills.javaScript} />
-          <Skill skill={skills.css} />
-          <Skill skill={skills.html} />
-          <Skill skill={skills.react} />
-          <Skill skill={skills.styledComponents} />
+          <TechFig tech={skills.javaScript} />
+          <TechFig tech={skills.css} />
+          <TechFig tech={skills.html} />
+          <TechFig tech={skills.react} />
+          <TechFig tech={skills.styledComponents} />
         </div>
         <h3>Backend/Database</h3>
         <Line />
         <div className={styles.container}>
-          <Skill skill={skills.expressNode} />
-          <Skill skill={skills.mysql} />
+          <TechFig tech={skills.expressNode} />
+          <TechFig tech={skills.mysql} />
         </div>
         <h3>Tools</h3>
         <Line />
         <div className={styles.container}>
-          <Skill skill={skills.git} />
-          <Skill skill={skills.npm} />
+          <TechFig tech={skills.git} />
+          <TechFig tech={skills.npm} />
         </div>
       </article>
-
     </section>
   );
 }
