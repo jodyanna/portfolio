@@ -1,18 +1,7 @@
 import React from 'react';
 
 import Anchor from "../Anchor";
-
-import cssIcon from '../../img/icons/css.svg';
-import htmlIcon from '../../img/icons/html5.svg';
-import jsIcon from '../../img/icons/javascript.svg';
-import mysqlIcon from '../../img/icons/mysql.svg';
-import nodeIcon from '../../img/icons/nodejs.svg';
-import pythonIcon from '../../img/icons/python.svg';
-import reactIcon from '../../img/icons/react.svg';
-import scIcon from '../../img/icons/styled-components.png';
-
-import styles from './Projects.module.css';
-import Line from "../Line";
+import Project from "./Project";
 
 
 export default class Projects extends React.Component {
@@ -65,7 +54,7 @@ export default class Projects extends React.Component {
       id: "github-summary",
       type: "React Component",
       techUsed: ["React", "JavaScript", "CSS", "HTML"],
-      overview: `Display a brief summary of a GitHub user's public repositories. Total programming language usage
+      overview: `Displays a brief summary of a GitHub user's public repositories. Total programming language usage
       displayed as a color coded bar.`,
       details: [],
       link: "#",
@@ -89,66 +78,4 @@ export default class Projects extends React.Component {
       </section>
     );
   }
-}
-
-class Project extends React.Component {
-  constructor(props) {
-    super(props);
-    this.icons = {
-      "JavaScript": jsIcon,
-      "HTML": htmlIcon,
-      "CSS": cssIcon,
-      "Python": pythonIcon,
-      "Express/Node.js": nodeIcon,
-      "MySQL": mysqlIcon,
-      "React": reactIcon,
-      "styled-components": scIcon,
-    }
-  }
-
-  render() {
-    const renderTechList = () => {
-      return this.props.project.techUsed.map(tech => <TechFig key={tech} tech={tech} icons={this.icons} />)
-    }
-
-    /*
-    const renderDetails = () => {
-      return this.props.project.details.map((desc, i) => <li key={i} className={styles.li}>{desc}</li>)
-    }
-    */
-
-    const renderLink = () => {
-      return this.props.project.link === "#" ? "" : <a href={this.props.project.link} className={styles.link}>Live Demo</a>
-    }
-
-    return (
-      <article className={styles.article}>
-        <div className={styles.heading}>
-          <h3 className={styles.name}>{this.props.project.name}</h3>
-          <h4 className={styles.caption}>{this.props.project.type}</h4>
-          <div className={styles.links}>
-            {renderLink()}
-            <a href={this.props.project.gitLink} className={styles.link}>Code</a>
-          </div>
-        </div>
-        <Line />
-        <div className={styles.techs}>
-          {renderTechList()}
-        </div>
-        <div className={styles.overview}>
-          {this.props.project.overview}
-        </div>
-      </article>
-    );
-  }
-}
-
-
-function TechFig(props) {
-  return (
-    <figure className={styles.iconContainer}>
-      <img src={props.icons[props.tech]} alt={props.tech} className={styles.icon}/>
-      <figcaption className={styles.caption}>{props.tech}</figcaption>
-    </figure>
-  );
 }
