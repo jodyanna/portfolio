@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.7cc4efa3.chunk.css",
-    "main.js": "/portfolio/static/js/main.58c6f55a.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.58c6f55a.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.c2f81254.chunk.css",
+    "main.js": "/portfolio/static/js/main.1aeabcec.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.1aeabcec.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.209c2d7e.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.209c2d7e.js.map",
-    "static/js/2.fc516bda.chunk.js": "/portfolio/static/js/2.fc516bda.chunk.js",
-    "static/js/2.fc516bda.chunk.js.map": "/portfolio/static/js/2.fc516bda.chunk.js.map",
+    "static/js/2.4e4b49b5.chunk.js": "/portfolio/static/js/2.4e4b49b5.chunk.js",
+    "static/js/2.4e4b49b5.chunk.js.map": "/portfolio/static/js/2.4e4b49b5.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.33d8224b774d10ea357ea6fe50cd6469.js": "/portfolio/precache-manifest.33d8224b774d10ea357ea6fe50cd6469.js",
+    "precache-manifest.65f0f5c7447324c06ed5b814961e10fa.js": "/portfolio/precache-manifest.65f0f5c7447324c06ed5b814961e10fa.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.7cc4efa3.chunk.css.map": "/portfolio/static/css/main.7cc4efa3.chunk.css.map",
-    "static/js/2.fc516bda.chunk.js.LICENSE.txt": "/portfolio/static/js/2.fc516bda.chunk.js.LICENSE.txt",
+    "static/css/main.c2f81254.chunk.css.map": "/portfolio/static/css/main.c2f81254.chunk.css.map",
+    "static/js/2.4e4b49b5.chunk.js.LICENSE.txt": "/portfolio/static/js/2.4e4b49b5.chunk.js.LICENSE.txt",
     "static/media/css.svg": "/portfolio/static/media/css.55338d57.svg",
     "static/media/dropdown-arrow.svg": "/portfolio/static/media/dropdown-arrow.d300a48b.svg",
     "static/media/git.png": "/portfolio/static/media/git.0e00786f.png",
@@ -22,15 +22,14 @@
     "static/media/jpdanna-resume.pdf": "/portfolio/static/media/jpdanna-resume.ed726511.pdf",
     "static/media/mysql.svg": "/portfolio/static/media/mysql.b018dd4e.svg",
     "static/media/nodejs.svg": "/portfolio/static/media/nodejs.be2df796.svg",
-    "static/media/php.svg": "/portfolio/static/media/php.d956cbbb.svg",
     "static/media/python.svg": "/portfolio/static/media/python.e2f7de8b.svg",
     "static/media/react.svg": "/portfolio/static/media/react.eab76719.svg",
     "static/media/styled-components.png": "/portfolio/static/media/styled-components.3745d5de.png"
   },
   "entrypoints": [
     "static/js/runtime-main.209c2d7e.js",
-    "static/js/2.fc516bda.chunk.js",
-    "static/css/main.7cc4efa3.chunk.css",
-    "static/js/main.58c6f55a.chunk.js"
+    "static/js/2.4e4b49b5.chunk.js",
+    "static/css/main.c2f81254.chunk.css",
+    "static/js/main.1aeabcec.chunk.js"
   ]
 }
