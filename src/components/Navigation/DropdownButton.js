@@ -3,17 +3,20 @@ import styled from "styled-components";
 import dropdownArrow from "../../img/icons/dropdown-arrow.svg";
 
 
-const Button = styled.a`
+const Button = styled.div`
   display: block;
   position: relative;
+  z-index: 2;
   top: 3px;
   
-  visibility: ${props => props.isVisible ? 'visible' : 'hidden'};
 
   margin-left: 1em;
 
   background-color: transparent;
   border: none;
+  
+  opacity: ${props => props.isVisible ? '1' : '0'};
+  transition: opacity 200ms ease-in-out;
   
   &:hover {
     cursor: pointer;

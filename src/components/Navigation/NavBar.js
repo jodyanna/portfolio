@@ -7,6 +7,7 @@ import { themes } from "../../styles/ThemeColors";
 
 
 const Bar = styled.ul`
+  z-index: 5;
   display: flex;
   
   align-items: flex-end;

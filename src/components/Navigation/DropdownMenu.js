@@ -5,10 +5,8 @@ import { themes } from "../../styles/ThemeColors";
 
 
 const Menu = styled.div`
-  visibility: ${props => props.isVisible ? 'visible' : 'hidden'};
-
   position: absolute;
-  z-index: 6;
+  z-index: -1;
   top: 48px;
 
   display: flex;
@@ -23,6 +21,10 @@ const Menu = styled.div`
   width: 200px;
 
   background-color: ${props => props.theme.background};
+  
+  opacity: ${props => props.isVisible ? '1' : '0'};
+  transform: ${props => props.isVisible ? 'translateY(0)' : 'translateY(-30%)'};
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;;
 `;
 
 const ListItem = styled.a`
